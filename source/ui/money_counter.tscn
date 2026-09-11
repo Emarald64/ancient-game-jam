@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://dm176ci0ctmpm"]
+
+[ext_resource type="Script" uid="uid://bf07v5pvt04br" path="res://source/ui/money_counter.gd" id="1_a3y6h"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_t7o1h"]
+
+[sub_resource type="Animation" id="Animation_a3y6h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_l8437"]
+resource_name = "collect"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -20), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.50133336, 1, 0.32, 1), Color(0.50133336, 1, 0.32, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3ngy1"]
+_data = {
+&"RESET": SubResource("Animation_a3y6h"),
+&"collect": SubResource("Animation_l8437")
+}
+
+[node name="MoneyCounter" type="HBoxContainer" unique_id=536954178]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_a3y6h")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=733814981]
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("1_t7o1h")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=481978505]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "0"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=764664646]
+libraries/ = SubResource("AnimationLibrary_3ngy1")

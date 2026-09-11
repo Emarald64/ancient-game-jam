@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dut4kwctm6nl"]
+
+[ext_resource type="PackedScene" uid="uid://c371gspmx2x7j" path="res://source/player.tscn" id="1_kaxhg"]
+[ext_resource type="PackedScene" uid="uid://b3g4yrvnavcsi" path="res://source/ui/game_timer.tscn" id="2_62cc7"]
+[ext_resource type="PackedScene" uid="uid://dm176ci0ctmpm" path="res://source/ui/money_counter.tscn" id="3_c1q7g"]
+[ext_resource type="TileSet" uid="uid://doybb3uq46ygn" path="res://source/tile_set.tres" id="3_caq8k"]
+[ext_resource type="PackedScene" uid="uid://b01h4mwxfmumd" path="res://source/pickups/base_pickup.tscn" id="4_s8x7u"]
+[ext_resource type="Script" uid="uid://bjl68sof7gcws" path="res://source/pickups/money_pickup.gd" id="6_s8x7u"]
+
+[node name="Main" type="Node2D" unique_id=1110147883]
+
+[node name="Player" parent="." unique_id=610998424 instance=ExtResource("1_kaxhg")]
+position = Vector2(468, 306)
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=296706503]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer" unique_id=189905640]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameTimer" parent="UILayer/VBoxContainer" unique_id=926535582 instance=ExtResource("2_62cc7")]
+layout_mode = 2
+text = "1:00.00"
+
+[node name="MoneyCounter" parent="UILayer/VBoxContainer" unique_id=536954178 instance=ExtResource("3_c1q7g")]
+layout_mode = 2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1317110864]
+tile_set = ExtResource("3_caq8k")
+
+[node name="Pickup" parent="TileMapLayer" unique_id=447885250 instance=ExtResource("4_s8x7u")]
+position = Vector2(252, 367)
+script = ExtResource("6_s8x7u")
+value = 1000000
+
+[connection signal="collected_money" from="Player" to="UILayer/VBoxContainer/MoneyCounter" method="add_money"]
