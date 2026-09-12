@@ -7,12 +7,13 @@ const DAMAGE_TYPE=Globals.DAMAGE_TYPE
 
 var health:=4
 var dying:=false
+var animating:=false
 @export var main:Main
 @export var health_counter:HealthCounter
 signal collected_money(amount:int)
 
 func _physics_process(_delta: float) -> void:
-	if not dying:
+	if not dying and not animating:
 		var movement=Input.get_vector("move_left","move_right","move_up","move_down")
 		SpriteDirectionDecider(movement)
 
@@ -81,15 +82,27 @@ func die(display_death_screen:=true,damage_type:=DAMAGE_TYPE.unknown):
 	health=0
 	update_health()
 	if display_death_screen:
-		main.death_screen.appear(damage_type)
+		main.time_out_animation.play()
+		main.death_screen.death_reason=damage_type
 
 func update_health():
 	health_counter.update_health(health)
 
 func hit(area:Area2D):
 	if not dying:
-		var damage=area.get_meta("damage",1)
-		var damage_type=area.get_meta("damage_type",DAMAGE_TYPE.unknown)
-		hurt(damage,damage_type)
-		if area.get_meta("remove_on_hit",false):
-			area.queue_free()
+		if area is SpikePit:
+			animating=true
+			var tween=create_tween()
+			tween.tween_property(self,"scale",Vector2.ZERO,1)
+			tween.tween_callback(hurt.bind(1,DAMAGE_TYPE.pit))
+			if health>1:
+				tween.tween_property(self,"global_position",area.respawn_target.global_position,0)
+				tween.tween_property(self,"scale",Vector2(.7,.7),0)
+				tween.tween_interval(.5)
+				tween.tween_property(self,"animating",false,0)
+		else:
+			var damage=area.get_meta("damage",1)
+			var damage_type=area.get_meta("damage_type",DAMAGE_TYPE.unknown)
+			hurt(damage,damage_type)
+			if area.get_meta("remove_on_hit",false):
+				area.queue_free()

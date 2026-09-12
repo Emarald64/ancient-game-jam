@@ -5,12 +5,14 @@ const DEATH_MESSAGES={
 	DAMAGE_TYPE.timeout:"You ran out of time...",
 	DAMAGE_TYPE.arrow:"You were shot by an arrow...",
 	DAMAGE_TYPE.unknown:"You were lost to time...",
-	DAMAGE_TYPE.bomb:"You were blown up by a bomb"
+	DAMAGE_TYPE.bomb:"You were blown up by a bomb...",
+	DAMAGE_TYPE.pit:"You fell into a bottomless pit..."
 }
+var death_reason:=DAMAGE_TYPE.unknown
 
-func appear(damage_type:=DAMAGE_TYPE.unknown):
-	$Label.text=DEATH_MESSAGES[damage_type]
-	$Label2.text = "You made $" + Globals.format_money(Globals.money)
+func appear():
+	$Label.text=DEATH_MESSAGES[death_reason]
+	$Label2.text = "You had $" + Globals.format_money(Globals.money)
 	$AnimationPlayer.play("appear")
 
 func restart():

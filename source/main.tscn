@@ -12,7 +12,6 @@
 [ext_resource type="Script" uid="uid://bjl68sof7gcws" path="res://source/pickups/money_pickup.gd" id="6_s8x7u"]
 [ext_resource type="PackedScene" uid="uid://dyaer2q370u5u" path="res://source/ui/screen_wipe.tscn" id="7_d5d55"]
 [ext_resource type="PackedScene" uid="uid://c00mqs60qi573" path="res://source/pickups/coin.tscn" id="8_rewae"]
-[ext_resource type="PackedScene" uid="uid://b0hplp6ipk7gj" path="res://source/arrow_spawner.tscn" id="13_lnbay"]
 [ext_resource type="PackedScene" uid="uid://dljttdmrkalih" path="res://source/game_objects/chest.tscn" id="14_r5lv5"]
 [ext_resource type="Texture2D" uid="uid://ddou6yvvv0b62" path="res://arte/deco/paintings1.png" id="15_7rnte"]
 [ext_resource type="PackedScene" uid="uid://cd28c0hrtlep" path="res://source/game_objects/bomb.tscn" id="15_d4qgt"]
@@ -44,6 +43,7 @@ value = 1000000
 
 [node name="Player" parent="." unique_id=610998424 node_paths=PackedStringArray("main", "health_counter") instance=ExtResource("1_kaxhg")]
 unique_name_in_owner = true
+y_sort_enabled = true
 position = Vector2(468, 306)
 scale = Vector2(0.7, 0.7)
 main = NodePath("..")
@@ -89,6 +89,7 @@ unique_name_in_owner = true
 layout_mode = 2
 
 [node name="TimeOutAnimation" parent="UILayer" unique_id=603268710 instance=ExtResource("4_4naa1")]
+unique_name_in_owner = true
 
 [node name="DeathScreen" parent="UILayer" unique_id=791762848 instance=ExtResource("5_1elff")]
 unique_name_in_owner = true
@@ -200,4 +201,4 @@ texture = SubResource("GradientTexture2D_6j2d2")
 [connection signal="collected_money" from="Player" to="UILayer/VBoxContainer/MoneyCounter" method="add_money"]
 [connection signal="time_up" from="UILayer/VBoxContainer/GameTimer" to="UILayer/TimeOutAnimation" method="play"]
 [connection signal="time_up" from="UILayer/VBoxContainer/GameTimer" to="Player" method="die" binds= [false]]
-[connection signal="show_death_screen" from="UILayer/TimeOutAnimation" to="UILayer/DeathScreen" method="appear" binds= [0]]
+[connection signal="show_death_screen" from="UILayer/TimeOutAnimation" to="UILayer/DeathScreen" method="appear"]
