@@ -1,0 +1,75 @@
+[gd_scene format=4 uid="uid://c37w6aw1kfkda"]
+
+[ext_resource type="TileSet" uid="uid://doybb3uq46ygn" path="res://source/tile_set.tres" id="1_ebxcj"]
+[ext_resource type="Script" uid="uid://dbvtivvppe521" path="res://source/extra_rooms/path_highlight_room.gd" id="1_tke8u"]
+[ext_resource type="PackedScene" uid="uid://cjmdlmaj6gf1i" path="res://source/game_objects/spike_pit.tscn" id="3_sf58l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6585"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sf58l"]
+size = Vector2(128, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ahak"]
+size = Vector2(48, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnfdj"]
+size = Vector2(112, 64)
+
+[node name="PathHighlightRoom" type="Node2D" unique_id=2111387179]
+script = ExtResource("1_tke8u")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=538703152]
+tile_map_data = PackedByteArray("AAAAAAAAAAABAAEAAAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAEAAAAAAAQAAAABAAEAAAAAAAUAAAABAAIAAAAAAAYAAAAEAAEAAAAAAAcAAAABAAAAAAAAAAgAAAABAAEAAAAAAAkAAAABAAEAAAAAAAoAAAABAAEAAAABAAAAAAABAAEAAAABAAEAAAABAAEAAAABAAIAAAABAAEAAAABAAMAAAABAAEAAAABAAQAAAABAAEAAAABAAUAAAABAAIAAAABAAYAAAAEAAEAAAABAAcAAAABAAAAAAABAAgAAAABAAEAAAABAAkAAAABAAEAAAABAAoAAAABAAEAAAACAAAAAAABAAEAAAACAAEAAAABAAEAAAACAAIAAAABAAEAAAACAAMAAAABAAEAAAACAAQAAAABAAEAAAACAAUAAAABAAIAAAACAAYAAAAEAAEAAAACAAcAAAABAAAAAAACAAgAAAABAAEAAAACAAkAAAABAAEAAAACAAoAAAABAAEAAAADAAAAAAABAAEAAAADAAEAAAABAAEAAAADAAIAAAABAAEAAAADAAMAAAABAAEAAAADAAQAAAABAAEAAAADAAUAAAABAAIAAAADAAYAAAAEAAEAAAADAAcAAAABAAAAAAADAAgAAAABAAEAAAADAAkAAAABAAEAAAADAAoAAAABAAEAAAAEAAAAAAABAAEAAAAEAAEAAAABAAEAAAAEAAIAAAABAAEAAAAEAAMAAAABAAEAAAAEAAQAAAABAAEAAAAEAAUAAAABAAIAAAAEAAYAAAAEAAEAAAAEAAcAAAABAAAAAAAEAAgAAAABAAEAAAAEAAkAAAABAAEAAAAEAAoAAAABAAEAAAAFAAAAAAABAAEAAAAFAAEAAAABAAEAAAAFAAIAAAABAAEAAAAFAAMAAAABAAEAAAAFAAQAAAABAAEAAAAFAAUAAAABAAIAAAAFAAYAAAAEAAEAAAAFAAcAAAABAAAAAAAFAAgAAAABAAEAAAAFAAkAAAABAAEAAAAFAAoAAAABAAEAAAAGAAAAAAABAAEAAAAGAAEAAAABAAEAAAAGAAIAAAABAAEAAAAGAAMAAAABAAEAAAAGAAQAAAABAAEAAAAGAAUAAAABAAIAAAAGAAYAAAAEAAEAAAAGAAcAAAABAAAAAAAGAAgAAAABAAEAAAAGAAkAAAABAAEAAAAGAAoAAAABAAEAAAAHAAAAAAABAAEAAAAHAAEAAAABAAEAAAAHAAIAAAABAAEAAAAHAAMAAAABAAEAAAAHAAQAAAABAAEAAAAHAAUAAAABAAIAAAAHAAYAAAAEAAEAAAAHAAcAAAABAAAAAAAHAAgAAAABAAEAAAAHAAkAAAABAAEAAAAHAAoAAAABAAEAAAAAAAsAAAABAAIAAAABAAsAAAABAAIAAAACAAsAAAABAAIAAAADAAsAAAABAAIAAAAEAAsAAAABAAIAAAAFAAsAAAABAAIAAAAGAAsAAAABAAIAAAAHAAsAAAABAAIAAAAAAAwAAAAEAAEAAAABAAwAAAAEAAEAAAACAAwAAAAEAAEAAAADAAwAAAAEAAEAAAAEAAwAAAAEAAEAAAAFAAwAAAAEAAEAAAAGAAwAAAAEAAEAAAAHAAwAAAAEAAEAAAA=")
+tile_set = ExtResource("1_ebxcj")
+
+[node name="ShowPaths" type="Area2D" parent="." unique_id=780625151]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShowPaths" unique_id=719905812]
+position = Vector2(224, 384)
+shape = SubResource("RectangleShape2D_a6585")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ShowPaths" unique_id=1663179878]
+position = Vector2(64, 208)
+shape = SubResource("RectangleShape2D_sf58l")
+
+[node name="PathHighlights" type="Node2D" parent="." unique_id=677550355]
+unique_name_in_owner = true
+
+[node name="Polygon2D" type="Polygon2D" parent="PathHighlights" unique_id=1452175518]
+polygon = PackedVector2Array(64, 352, 64, 256, 128, 256, 128, 352)
+
+[node name="Polygon2D2" type="Polygon2D" parent="PathHighlights" unique_id=1829038789]
+position = Vector2(-32, 0)
+polygon = PackedVector2Array(32, 160, 32, 48, 160, 48, 160, 80, 224, 80, 224, 0, 256, 0, 256, 112, 128, 112, 128, 80, 64, 80, 64, 160)
+
+[node name="SpikePit" parent="." unique_id=1645535693 node_paths=PackedStringArray("respawn_target") instance=ExtResource("3_sf58l")]
+respawn_target = NodePath("../RespawnPos1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikePit" unique_id=2118158762]
+position = Vector2(24, 304)
+shape = SubResource("RectangleShape2D_8ahak")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="SpikePit" unique_id=998100250]
+position = Vector2(200, 304)
+shape = SubResource("RectangleShape2D_rnfdj")
+
+[node name="SpikePit2" parent="." unique_id=1458475916 node_paths=PackedStringArray("respawn_target") instance=ExtResource("3_sf58l")]
+respawn_target = NodePath("../RespawnPos2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpikePit2" unique_id=351895937]
+polygon = PackedVector2Array(48, 96, 80, 96, 80, 128, 240, 128, 240, 24, 256, 24, 256, 144, 48, 144)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="SpikePit2" unique_id=1484863916]
+polygon = PackedVector2Array(0, 16, 176, 16, 176, 56, 144, 56, 144, 32, 0, 32)
+
+[node name="RespawnPos1" type="Marker2D" parent="." unique_id=1039762612]
+position = Vector2(224, 384)
+
+[node name="RespawnPos2" type="Marker2D" parent="." unique_id=381636537]
+position = Vector2(32, 208)
+
+[connection signal="area_entered" from="ShowPaths" to="." method="highlight_path"]
+[connection signal="area_exited" from="ShowPaths" to="." method="unhighlight_path"]
