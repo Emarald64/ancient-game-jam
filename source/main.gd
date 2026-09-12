@@ -2,6 +2,7 @@ class_name Main
 extends Node2D
 
 @onready var player=%Player
+@onready var time_out_animation=%TimeOutAnimation
 @onready var death_screen=%DeathScreen
 @onready var screen_wipe=%ScreenWipe
 @onready var game_timer=%GameTimer

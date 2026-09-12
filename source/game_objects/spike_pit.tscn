@@ -4,5 +4,3 @@
 
 [node name="SpikePit" type="Area2D" unique_id=1645535693]
 script = ExtResource("1_sda1a")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1910116589]

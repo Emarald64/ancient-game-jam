@@ -6,7 +6,8 @@ enum DAMAGE_TYPE{
 	timeout,
 	arrow,
 	unknown,
-	bomb
+	bomb,
+	pit
 }
 
 var main:Main
