@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b01h4mwxfmumd" path="res://source/pickups/base_pickup.tscn" id="4_s8x7u"]
 [ext_resource type="PackedScene" uid="uid://jw2l3450taoy" path="res://source/ui/death_screen.tscn" id="5_1elff"]
 [ext_resource type="Script" uid="uid://bjl68sof7gcws" path="res://source/pickups/money_pickup.gd" id="6_s8x7u"]
+[ext_resource type="PackedScene" uid="uid://dyaer2q370u5u" path="res://source/ui/screen_wipe.tscn" id="7_d5d55"]
 [ext_resource type="PackedScene" uid="uid://c00mqs60qi573" path="res://source/pickups/coin.tscn" id="8_rewae"]
 
 [node name="Main" type="Node2D" unique_id=1110147883]
@@ -38,6 +39,7 @@ offset_bottom = 40.0
 [node name="GameTimer" parent="UILayer/VBoxContainer" unique_id=926535582 instance=ExtResource("2_62cc7")]
 layout_mode = 2
 text = "1:00.00"
+time_left = 5.0
 
 [node name="MoneyCounter" parent="UILayer/VBoxContainer" unique_id=536954178 instance=ExtResource("3_c1q7g")]
 layout_mode = 2
@@ -45,6 +47,9 @@ layout_mode = 2
 [node name="TimeOutAnimation" parent="UILayer" unique_id=603268710 instance=ExtResource("4_4naa1")]
 
 [node name="DeathScreen" parent="UILayer" unique_id=791762848 instance=ExtResource("5_1elff")]
+unique_name_in_owner = true
+
+[node name="ScreenWipe" parent="UILayer" unique_id=1574779303 instance=ExtResource("7_d5d55")]
 unique_name_in_owner = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1317110864]

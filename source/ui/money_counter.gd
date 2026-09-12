@@ -6,7 +6,7 @@ var count_speed:float
 
 func _process(delta: float) -> void:
 	if displayed_money<total_money:
-		displayed_money=mini(total_money,int(displayed_money+count_speed*delta))
+		displayed_money=mini(total_money,displayed_money+maxi(int(count_speed*delta),1))
 		%Label.text=format_money(displayed_money)
 
 func add_money(amount:int):
