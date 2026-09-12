@@ -8,6 +8,7 @@ const DAMAGE_TYPE=Globals.DAMAGE_TYPE
 var health:=5
 var is_dying:=false
 @export var main:Main
+@export var health_counter:HealthCounter
 signal collected_money(amount:int)
 
 func _physics_process(_delta: float) -> void:
@@ -72,13 +73,15 @@ func heal(amount:int):
 func hurt(amount:int):
 	health-=amount
 	if health<=0:
-		health=0
+		die()
 	update_health()
 
 func die(display_death_screen:=true,damage_type:=DAMAGE_TYPE.unknown):
 	is_dying=true
+	health=0
+	update_health()
 	if display_death_screen:
 		main.dealth_screen.appear(damage_type)
 
 func update_health():
-	pass
+	health_counter.update_health(health)

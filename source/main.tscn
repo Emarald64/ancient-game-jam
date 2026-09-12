@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b873hjapey7" path="res://source/main.gd" id="1_2uit2"]
 [ext_resource type="PackedScene" uid="uid://c371gspmx2x7j" path="res://source/player.tscn" id="1_kaxhg"]
 [ext_resource type="PackedScene" uid="uid://b3g4yrvnavcsi" path="res://source/ui/game_timer.tscn" id="2_62cc7"]
+[ext_resource type="PackedScene" uid="uid://dr1vd1jkko2x2" path="res://source/ui/health_counter.tscn" id="3_5aqvd"]
 [ext_resource type="PackedScene" uid="uid://dm176ci0ctmpm" path="res://source/ui/money_counter.tscn" id="3_c1q7g"]
 [ext_resource type="TileSet" uid="uid://doybb3uq46ygn" path="res://source/tile_set.tres" id="3_caq8k"]
 [ext_resource type="PackedScene" uid="uid://hgxjysbpdkyq" path="res://source/ui/time_out_animation.tscn" id="4_4naa1"]
@@ -15,10 +16,11 @@
 [node name="Main" type="Node2D" unique_id=1110147883]
 script = ExtResource("1_2uit2")
 
-[node name="Player" parent="." unique_id=610998424 node_paths=PackedStringArray("main") instance=ExtResource("1_kaxhg")]
+[node name="Player" parent="." unique_id=610998424 node_paths=PackedStringArray("main", "health_counter") instance=ExtResource("1_kaxhg")]
 unique_name_in_owner = true
 position = Vector2(468, 306)
 main = NodePath("..")
+health_counter = NodePath("../UILayer/HealthCounter")
 
 [node name="playerCam" type="Camera2D" parent="Player" unique_id=1217677857]
 position_smoothing_enabled = true
@@ -32,9 +34,22 @@ drag_bottom_margin = 0.15
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=296706503]
 
+[node name="HealthCounter" parent="UILayer" unique_id=664241931 instance=ExtResource("3_5aqvd")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -171.0
+offset_top = 32.0
+offset_right = -22.0
+offset_bottom = 97.0
+grow_horizontal = 0
+metadata/_edit_use_anchors_ = true
+
 [node name="VBoxContainer" type="VBoxContainer" parent="UILayer" unique_id=189905640]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 161.0
+offset_bottom = 142.0
 
 [node name="GameTimer" parent="UILayer/VBoxContainer" unique_id=926535582 instance=ExtResource("2_62cc7")]
 layout_mode = 2

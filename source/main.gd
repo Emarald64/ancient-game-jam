@@ -8,10 +8,8 @@ extends Node2D
 func _ready() -> void:
 	Globals.main=self
 	if Globals.restarting:
-		#screen_wipe.cover()
-		#RenderingServer.set_default_clear_color()
+		screen_wipe.cover()
 		screen_wipe.wipe_out()
 		Globals.restarting=false
 		await get_tree().process_frame
 		RenderingServer.set_default_clear_color(Color("4d4d4d"))
-		#ProjectSettings.set_setting("rendering/environment/defaults/default_clear_color",Color("4d4d4d"))
