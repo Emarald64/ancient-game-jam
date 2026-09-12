@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dljttdmrkalih"]
 
 [ext_resource type="Script" uid="uid://bpw4cnyi6agdr" path="res://source/game_objects/chest.gd" id="1_o1gol"]
-[ext_resource type="PackedScene" uid="uid://c00mqs60qi573" path="res://source/pickups/coin.tscn" id="2_jyja1"]
 [ext_resource type="Texture2D" uid="uid://bx5kknofodpsj" path="res://arte/chest01.png" id="2_ms0jn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6585"]
@@ -57,26 +56,6 @@ size = Vector2(32, 32)
 script = ExtResource("1_o1gol")
 drop_radius_minimum = 32.0
 drop_radius_maximum = 128.0
-
-[node name="Coin" parent="." unique_id=447885250 instance=ExtResource("2_jyja1")]
-visible = false
-monitorable = false
-
-[node name="Coin2" parent="." unique_id=1086721827 instance=ExtResource("2_jyja1")]
-visible = false
-monitorable = false
-
-[node name="Coin3" parent="." unique_id=112356310 instance=ExtResource("2_jyja1")]
-visible = false
-monitorable = false
-
-[node name="Coin4" parent="." unique_id=644425571 instance=ExtResource("2_jyja1")]
-visible = false
-monitorable = false
-
-[node name="Coin5" parent="." unique_id=1382139587 instance=ExtResource("2_jyja1")]
-visible = false
-monitorable = false
 
 [node name="DetectPlayer" type="Area2D" parent="." unique_id=180254239 groups=["not_dropped_from_chest"]]
 collision_layer = 0

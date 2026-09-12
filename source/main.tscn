@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b0hplp6ipk7gj" path="res://source/arrow_spawner.tscn" id="13_lnbay"]
 [ext_resource type="PackedScene" uid="uid://dljttdmrkalih" path="res://source/game_objects/chest.tscn" id="14_r5lv5"]
 [ext_resource type="Texture2D" uid="uid://ddou6yvvv0b62" path="res://arte/deco/paintings1.png" id="15_7rnte"]
+[ext_resource type="PackedScene" uid="uid://cd28c0hrtlep" path="res://source/game_objects/bomb.tscn" id="15_d4qgt"]
 [ext_resource type="Texture2D" uid="uid://dtpmnk2tccq4l" path="res://arte/deco/paintings3.png" id="16_nfm2e"]
 [ext_resource type="Texture2D" uid="uid://bnc6qwt85l07u" path="res://arte/deco/paintings4.png" id="17_ks00e"]
 [ext_resource type="Texture2D" uid="uid://daia41u381r6k" path="res://arte/deco/chnedleri_test.png" id="18_k04uo"]
@@ -108,6 +109,24 @@ position = Vector2(45, 617)
 
 [node name="Chest" parent="." unique_id=1748872296 instance=ExtResource("14_r5lv5")]
 position = Vector2(613, 262)
+
+[node name="Bomb" parent="Chest" unique_id=1321889438 instance=ExtResource("15_d4qgt")]
+visible = false
+
+[node name="Bomb2" parent="Chest" unique_id=929716649 instance=ExtResource("15_d4qgt")]
+visible = false
+
+[node name="Bomb3" parent="Chest" unique_id=441140555 instance=ExtResource("15_d4qgt")]
+visible = false
+
+[node name="Bomb4" parent="Chest" unique_id=1539882601 instance=ExtResource("15_d4qgt")]
+visible = false
+
+[node name="Bomb5" parent="Chest" unique_id=763819317 instance=ExtResource("15_d4qgt")]
+visible = false
+
+[node name="Bomb6" parent="Chest" unique_id=239124102 instance=ExtResource("15_d4qgt")]
+visible = false
 
 [node name="Paintings1" type="Sprite2D" parent="." unique_id=1482000741]
 texture_filter = 1

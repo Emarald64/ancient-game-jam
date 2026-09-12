@@ -10,6 +10,7 @@ func _on_found_in_chest():
 
 func explode():
 	$Explosion.monitorable=true
+	$bombBlowUpSprite.play("explosion")
 	var tween=create_tween()
 	tween.tween_property($Explosion/CollisionShape2D.shape,"radius",256,.1)
 	tween.tween_callback(queue_free)
