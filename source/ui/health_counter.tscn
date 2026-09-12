@@ -126,6 +126,7 @@ _data = {
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/separation = 11
+alignment = 2
 script = ExtResource("1_2esmg")
 
 [node name="Label" type="Label" parent="." unique_id=133160504]
