@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://dyaer2q370u5u"]
+
+[ext_resource type="Texture2D" uid="uid://dx70hyuskn212" path="res://arte/ui/screen_wipe.png" id="1_aqhvd"]
+[ext_resource type="Script" uid="uid://cnarmfj34boov" path="res://source/ui/screen_wipe.gd" id="2_wx1yr"]
+
+[sub_resource type="Animation" id="Animation_wx1yr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(20, 324)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-40, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_r6k1w"]
+resource_name = "wipe_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(20, 324), Vector2(605.5, 324)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-40, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pgumk"]
+resource_name = "wipe_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(605.5, 324), Vector2(20, 324)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(-40, 0), Vector2(1152, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ngkqo"]
+_data = {
+&"RESET": SubResource("Animation_wx1yr"),
+&"wipe_in": SubResource("Animation_r6k1w"),
+&"wipe_out": SubResource("Animation_pgumk")
+}
+
+[node name="ScreenWipe" type="NinePatchRect" unique_id=1574779303]
+offset_left = -40.0
+offset_right = -20.0
+offset_bottom = 324.0
+scale = Vector2(2, 2)
+texture = ExtResource("1_aqhvd")
+region_rect = Rect2(0, 0, 54, 54)
+patch_margin_left = 10
+patch_margin_right = 10
+axis_stretch_vertical = 1
+script = ExtResource("2_wx1yr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2145960647]
+libraries/ = SubResource("AnimationLibrary_ngkqo")

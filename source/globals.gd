@@ -1,4 +1,4 @@
-class_name globals
+#class_name globals
 
 extends Node
 
@@ -7,3 +7,6 @@ enum DAMAGE_TYPE{
 	arrow,
 	unknown
 }
+
+var main:Main
+var restarting:=false
