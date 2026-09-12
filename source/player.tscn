@@ -10,6 +10,7 @@ size = Vector2(54, 58)
 size = Vector2(110, 110)
 
 [node name="Player" type="CharacterBody2D" unique_id=610998424 node_paths=PackedStringArray("playerSprite")]
+collision_layer = 9
 motion_mode = 1
 script = ExtResource("1_l788v")
 playerSprite = NodePath("CatSprite")
