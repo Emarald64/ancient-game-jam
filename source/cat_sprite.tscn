@@ -1,6 +1,38 @@
 [gd_scene format=3 uid="uid://b5gshl4y2tqit"]
 
-[ext_resource type="Texture2D" uid="uid://duiwv8p7s7udy" path="res://arte/catStuff/catBigWalkSpriteSheet.png" id="1_hd2yd"]
+[ext_resource type="Texture2D" uid="uid://cmuynv83y3dyo" path="res://arte/catStuff/catCanvasTextiure.tres" id="1_hd2yd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hd2yd"]
+atlas = ExtResource("1_hd2yd")
+region = Rect2(2666, 233, 24, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bgc4"]
+atlas = ExtResource("1_hd2yd")
+region = Rect2(2503, 350, 24, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwi3i"]
+atlas = ExtResource("1_hd2yd")
+region = Rect2(2542, 185, 111, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3eywc"]
+atlas = ExtResource("1_hd2yd")
+region = Rect2(2503, 268, 111, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfwdo"]
+atlas = ExtResource("1_hd2yd")
+region = Rect2(2528, 368, 83, 99)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cloo8"]
+atlas = ExtResource("1_hd2yd")
+region = Rect2(2612, 368, 83, 99)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whqx3"]
+atlas = ExtResource("1_hd2yd")
+region = Rect2(2419, 244, 83, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wieqo"]
+atlas = ExtResource("1_hd2yd")
+region = Rect2(2418, 362, 84, 105)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7dinq"]
 atlas = ExtResource("1_hd2yd")
@@ -358,6 +390,35 @@ region = Rect2(1180, 322, 118, 120)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_hd2yd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bgc4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwi3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3eywc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfwdo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cloo8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whqx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wieqo")
+}],
+"loop": 0,
+"name": &"idle_sprites",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_7dinq")
 }, {
 "duration": 1.0,
@@ -664,7 +725,5 @@ animations = [{
 [node name="CatSprite" type="AnimatedSprite2D" unique_id=1784879053]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_6j2d2")
-animation = &"walk_left"
-frame = 4
-frame_progress = 0.24838105
+animation = &"idle_sprites"
 speed_scale = 10.0

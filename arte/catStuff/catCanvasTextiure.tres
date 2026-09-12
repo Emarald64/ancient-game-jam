@@ -1,3 +1,9 @@
 [gd_resource type="CanvasTexture" format=3 uid="uid://cmuynv83y3dyo"]
 
+[ext_resource type="Texture2D" uid="uid://duiwv8p7s7udy" path="res://arte/catStuff/catBigWalkSpriteSheet.png" id="1_mudiy"]
+[ext_resource type="Texture2D" uid="uid://t5xd102pebuu" path="res://arte/catStuff/catNormal.png" id="2_j83lj"]
+
 [resource]
+diffuse_texture = ExtResource("1_mudiy")
+normal_texture = ExtResource("2_j83lj")
+texture_filter = 1

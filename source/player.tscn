@@ -9,16 +9,16 @@ size = Vector2(54, 58)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mgyxd"]
 size = Vector2(110, 110)
 
-[node name="Player" type="CharacterBody2D" unique_id=610998424]
+[node name="Player" type="CharacterBody2D" unique_id=610998424 node_paths=PackedStringArray("playerSprite")]
 motion_mode = 1
 script = ExtResource("1_l788v")
+playerSprite = NodePath("CatSprite")
 
 [node name="CatSprite" parent="." unique_id=1784879053 instance=ExtResource("2_l788v")]
-animation = &"walk_down"
-frame = 0
-frame_progress = 0.0
+frame_progress = 0.7605645
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=135320124]
+visible = false
 shape = SubResource("RectangleShape2D_a6585")
 
 [node name="Pickup" type="Area2D" parent="." unique_id=969742239]
@@ -26,6 +26,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pickup" unique_id=78467523]
+visible = false
 shape = SubResource("RectangleShape2D_mgyxd")
 
 [connection signal="area_entered" from="Pickup" to="." method="_on_pickup"]
