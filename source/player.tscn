@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://5imd3s4duyyn" path="res://source/player.gd" id="1_l788v"]
 [ext_resource type="Texture2D" uid="uid://cmuynv83y3dyo" path="res://arte/catStuff/catCanvasTextiure.tres" id="2_l788v"]
+[ext_resource type="Texture2D" uid="uid://ood4c063yctm" path="res://arte/spikePit.png" id="3_mgyxd"]
+[ext_resource type="Texture2D" uid="uid://ufsc3xldc006" path="res://arte/dollar_sign.png" id="4_8gf3v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hd2yd"]
 atlas = ExtResource("2_l788v")
@@ -729,6 +731,58 @@ size = Vector2(54, 58)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mgyxd"]
 size = Vector2(110, 110)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl8wf"]
+atlas = ExtResource("4_8gf3v")
+region = Rect2(34, 14, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gf3v"]
+atlas = ExtResource("3_mgyxd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwjqb"]
+atlas = ExtResource("3_mgyxd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t71p0"]
+atlas = ExtResource("3_mgyxd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqehw"]
+atlas = ExtResource("3_mgyxd")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_48c3i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tl8wf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gf3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwjqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t71p0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqehw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t71p0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwjqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tl8wf")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 12.0
+}]
+
 [node name="Player" type="CharacterBody2D" unique_id=610998424 node_paths=PackedStringArray("playerSprite")]
 collision_layer = 9
 motion_mode = 1
@@ -771,6 +825,12 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1156779520]
 visible = false
 shape = SubResource("RectangleShape2D_a6585")
+
+[node name="spanim1" type="AnimatedSprite2D" parent="." unique_id=1475437872]
+z_index = -1
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_48c3i")
 
 [connection signal="area_entered" from="Pickup" to="." method="_on_pickup"]
 [connection signal="area_entered" from="HurtBox" to="." method="hit"]

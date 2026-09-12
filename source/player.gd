@@ -84,6 +84,7 @@ func heal(amount:int):
 
 func hurt(amount:int,damage_type:=DAMAGE_TYPE.unknown):
 	health-=amount
+	
 	if health<=0:
 		die(true,damage_type)
 	update_health()
@@ -91,6 +92,7 @@ func hurt(amount:int,damage_type:=DAMAGE_TYPE.unknown):
 func die(display_death_screen:=true,damage_type:=DAMAGE_TYPE.unknown):
 	dying=true
 	health=0
+
 	update_health()
 	if display_death_screen:
 		main.time_out_animation.play()
@@ -102,6 +104,7 @@ func update_health():
 func hit(area:Area2D):
 	if not dying:
 		if area is SpikePit:
+			$spanim1.play("default")
 			animating=true
 			var tween=create_tween()
 			tween.tween_property(self,"scale",Vector2.ZERO,1)
