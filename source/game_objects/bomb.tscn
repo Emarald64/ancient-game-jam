@@ -104,6 +104,7 @@ one_shot = true
 texture = ExtResource("3_sy3ph")
 
 [node name="BombFlash" type="ColorRect" parent="." unique_id=1331103170]
+z_index = 2
 material = SubResource("ShaderMaterial_5rbmr")
 anchors_preset = 8
 anchor_left = 0.5

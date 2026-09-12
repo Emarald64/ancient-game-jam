@@ -13,7 +13,7 @@ func explode():
 	$bombBlowUpSprite.play("explosion")
 	var tween=create_tween()
 	tween.tween_property($Explosion/CollisionShape2D.shape,"radius",256,.1)
-	tween.tween_interval(.8)
+	tween.tween_interval(.65)
 	tween.tween_callback(queue_free)
 	
 

@@ -65,7 +65,7 @@ collision_mask = 8
 shape = SubResource("RectangleShape2D_a6585")
 
 [node name="ChestSprite" type="AnimatedSprite2D" parent="." unique_id=527328317 groups=["not_dropped_from_chest"]]
-z_index = -1
+y_sort_enabled = true
 texture_filter = 1
 position = Vector2(0, -8)
 scale = Vector2(1.25, 1.25)

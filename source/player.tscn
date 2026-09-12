@@ -16,6 +16,7 @@ script = ExtResource("1_l788v")
 playerSprite = NodePath("CatSprite")
 
 [node name="CatSprite" parent="." unique_id=1784879053 instance=ExtResource("2_l788v")]
+z_index = 1
 frame_progress = 0.7605645
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=135320124]
