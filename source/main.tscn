@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://dljttdmrkalih" path="res://source/game_objects/chest.tscn" id="14_r5lv5"]
 [ext_resource type="Texture2D" uid="uid://ddou6yvvv0b62" path="res://arte/deco/paintings1.png" id="15_7rnte"]
 [ext_resource type="Texture2D" uid="uid://dtpmnk2tccq4l" path="res://arte/deco/paintings3.png" id="16_nfm2e"]
+[ext_resource type="Texture2D" uid="uid://bnc6qwt85l07u" path="res://arte/deco/paintings4.png" id="17_ks00e"]
+[ext_resource type="Texture2D" uid="uid://daia41u381r6k" path="res://arte/deco/chnedleri_test.png" id="18_k04uo"]
 
 [node name="Main" type="Node2D" unique_id=1110147883]
 script = ExtResource("1_2uit2")
@@ -33,11 +35,12 @@ value = 1000000
 [node name="Player" parent="." unique_id=610998424 node_paths=PackedStringArray("main", "health_counter") instance=ExtResource("1_kaxhg")]
 unique_name_in_owner = true
 position = Vector2(468, 306)
+scale = Vector2(0.7, 0.7)
 main = NodePath("..")
 health_counter = NodePath("../UILayer/HealthCounter")
 
 [node name="playerCam" type="Camera2D" parent="Player" unique_id=1217677857]
-zoom = Vector2(1.4, 1.4)
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 drag_horizontal_enabled = true
@@ -107,15 +110,30 @@ position = Vector2(613, 262)
 
 [node name="Paintings1" type="Sprite2D" parent="." unique_id=1482000741]
 texture_filter = 1
-position = Vector2(486.00006, 91.00001)
-scale = Vector2(2.5, 2.5)
+position = Vector2(578, 171.45041)
 texture = ExtResource("15_7rnte")
 
 [node name="Paintings2" type="Sprite2D" parent="." unique_id=934602252]
 texture_filter = 1
-position = Vector2(670.00006, 91.00001)
-scale = Vector2(2.5, 2.5)
+position = Vector2(648, 171.45041)
 texture = ExtResource("16_nfm2e")
+
+[node name="Paintings4" type="Sprite2D" parent="." unique_id=1052785395]
+texture_filter = 1
+position = Vector2(311, 212)
+rotation = -0.48488036
+skew = 0.5061455
+texture = ExtResource("17_ks00e")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=879217749]
+scroll_scale = Vector2(1.055, 1.1)
+
+[node name="ChnedleriTest" type="Sprite2D" parent="Parallax2D" unique_id=593812445]
+z_index = 4
+texture_filter = 1
+position = Vector2(492, 151)
+scale = Vector2(1.755, 1.755)
+texture = ExtResource("18_k04uo")
 
 [connection signal="collected_money" from="Player" to="UILayer/VBoxContainer/MoneyCounter" method="add_money"]
 [connection signal="time_up" from="UILayer/VBoxContainer/GameTimer" to="UILayer/TimeOutAnimation" method="play"]
