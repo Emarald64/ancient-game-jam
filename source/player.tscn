@@ -1,17 +1,22 @@
 [gd_scene format=3 uid="uid://c371gspmx2x7j"]
 
 [ext_resource type="Script" uid="uid://5imd3s4duyyn" path="res://source/player.gd" id="1_l788v"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_pkbjd"]
+[ext_resource type="PackedScene" uid="uid://b5gshl4y2tqit" path="res://source/cat_sprite.tscn" id="2_l788v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6585"]
-size = Vector2(128, 128)
+size = Vector2(54, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgyxd"]
+size = Vector2(110, 110)
 
 [node name="Player" type="CharacterBody2D" unique_id=610998424]
 motion_mode = 1
 script = ExtResource("1_l788v")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1304659693]
-texture = ExtResource("1_pkbjd")
+[node name="CatSprite" parent="." unique_id=1784879053 instance=ExtResource("2_l788v")]
+animation = &"walk_down"
+frame = 0
+frame_progress = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=135320124]
 shape = SubResource("RectangleShape2D_a6585")
@@ -21,6 +26,6 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pickup" unique_id=78467523]
-shape = SubResource("RectangleShape2D_a6585")
+shape = SubResource("RectangleShape2D_mgyxd")
 
 [connection signal="area_entered" from="Pickup" to="." method="_on_pickup"]
