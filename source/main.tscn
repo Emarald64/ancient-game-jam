@@ -75,6 +75,7 @@ layout_mode = 2
 text = "1:00.00"
 
 [node name="MoneyCounter" parent="UILayer/VBoxContainer" unique_id=536954178 instance=ExtResource("3_c1q7g")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="TimeOutAnimation" parent="UILayer" unique_id=603268710 instance=ExtResource("4_4naa1")]
