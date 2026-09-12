@@ -1,0 +1,4 @@
+traps:
+	arrow trap [x]
+	spike pits
+	

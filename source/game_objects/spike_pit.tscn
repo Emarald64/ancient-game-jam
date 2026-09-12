@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cjmdlmaj6gf1i"]
+
+[ext_resource type="Script" uid="uid://drr4rf0wvff0r" path="res://source/game_objects/spike_pit.gd" id="1_sda1a"]
+
+[node name="SpikePit" type="Area2D" unique_id=1645535693]
+script = ExtResource("1_sda1a")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1910116589]
