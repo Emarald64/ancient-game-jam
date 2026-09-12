@@ -10,3 +10,4 @@ enum DAMAGE_TYPE{
 
 var main:Main
 var restarting:=false
+var money : int = 0
