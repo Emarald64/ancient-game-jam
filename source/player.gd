@@ -5,14 +5,14 @@ const SPEED = 400.0
 var curAnim : int = 0
 const DAMAGE_TYPE=Globals.DAMAGE_TYPE
 
-var health:=5
-var is_dying:=false
+var health:=4
+var dying:=false
 @export var main:Main
 @export var health_counter:HealthCounter
 signal collected_money(amount:int)
 
 func _physics_process(_delta: float) -> void:
-	if not is_dying:
+	if not dying:
 		var movement=Input.get_vector("move_left","move_right","move_up","move_down")
 		SpriteDirectionDecider(movement)
 
@@ -77,11 +77,18 @@ func hurt(amount:int):
 	update_health()
 
 func die(display_death_screen:=true,damage_type:=DAMAGE_TYPE.unknown):
-	is_dying=true
+	dying=true
 	health=0
 	update_health()
 	if display_death_screen:
-		main.dealth_screen.appear(damage_type)
+		main.death_screen.appear(damage_type)
 
 func update_health():
 	health_counter.update_health(health)
+
+func hit(area:Area2D):
+	if not dying:
+		var damage=area.get_meta("damage",1)
+		hurt(damage)
+		if area.get_meta("remove_on_hit",false):
+			area.queue_free()

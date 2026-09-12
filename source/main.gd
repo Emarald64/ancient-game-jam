@@ -4,6 +4,7 @@ extends Node2D
 @onready var player=%Player
 @onready var death_screen=%DeathScreen
 @onready var screen_wipe=%ScreenWipe
+@onready var game_timer=%GameTimer
 
 func _ready() -> void:
 	Globals.main=self
@@ -13,3 +14,7 @@ func _ready() -> void:
 		Globals.restarting=false
 		await get_tree().process_frame
 		RenderingServer.set_default_clear_color(Color("4d4d4d"))
+	start_game()
+
+func start_game():
+	game_timer.running=true
