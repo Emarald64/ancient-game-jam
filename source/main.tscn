@@ -50,6 +50,7 @@ main = NodePath("..")
 health_counter = NodePath("../UILayer/HealthCounter")
 
 [node name="playerCam" type="Camera2D" parent="Player" unique_id=1217677857]
+unique_name_in_owner = true
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0

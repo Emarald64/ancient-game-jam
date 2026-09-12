@@ -7,6 +7,7 @@ extends Node2D
 @onready var screen_wipe=%ScreenWipe
 @onready var game_timer=%GameTimer
 @onready var money_counter=%MoneyCounter
+@onready var camera=%playerCam
 
 func _ready() -> void:
 	Globals.main=self
