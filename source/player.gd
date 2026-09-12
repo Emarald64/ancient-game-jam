@@ -18,6 +18,8 @@ func _physics_process(_delta: float) -> void:
 		velocity=movement*SPEED
 
 		move_and_slide()
+	else:
+		SpriteDirectionDecider(Vector2.ZERO)
 	
 func SpriteDirectionDecider(movement : Vector2) -> void:
 	#ts kinda sucks ngl but i dont wanna sit here and think abt how to do it better
@@ -76,7 +78,7 @@ func hurt(amount:int):
 func die(display_death_screen:=true,damage_type:=DAMAGE_TYPE.unknown):
 	is_dying=true
 	if display_death_screen:
-		main.dealth_screen.appear()
+		main.dealth_screen.appear(damage_type)
 
 func update_health():
 	pass

@@ -39,19 +39,10 @@ unique_name_in_owner = true
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1317110864]
 tile_set = ExtResource("3_caq8k")
 
-[node name="GoodCoin" parent="TileMapLayer" unique_id=1991088649 instance=ExtResource("7_4naa1")]
-position = Vector2(355, 146)
-
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=105007734]
-position = Vector2(595, 205.00002)
-scale = Vector2(4.875, 4.875)
-energy = 12.7
-texture = SubResource("GradientTexture2D_6j2d2")
-
-[node name="Light" type="Sprite2D" parent="." unique_id=394600640]
-position = Vector2(595.5, 209.5)
-scale = Vector2(2.34375, 2.34375)
-texture = ExtResource("6_s8x7u")
+[node name="Pickup" parent="TileMapLayer" unique_id=447885250 instance=ExtResource("4_s8x7u")]
+position = Vector2(252, 367)
+script = ExtResource("6_s8x7u")
+value = 1000000
 
 [connection signal="collected_money" from="Player" to="UILayer/VBoxContainer/MoneyCounter" method="add_money"]
 [connection signal="time_up" from="UILayer/VBoxContainer/GameTimer" to="UILayer/TimeOutAnimation" method="play"]
