@@ -1,9 +1,54 @@
 [gd_scene format=3 uid="uid://dljttdmrkalih"]
 
 [ext_resource type="Script" uid="uid://bpw4cnyi6agdr" path="res://source/game_objects/chest.gd" id="1_o1gol"]
+[ext_resource type="PackedScene" uid="uid://c00mqs60qi573" path="res://source/pickups/coin.tscn" id="2_jyja1"]
+[ext_resource type="Texture2D" uid="uid://bx5kknofodpsj" path="res://arte/chest01.png" id="2_ms0jn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6585"]
-size = Vector2(64, 64)
+size = Vector2(100, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyja1"]
+atlas = ExtResource("2_ms0jn")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0yiv"]
+atlas = ExtResource("2_ms0jn")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3uby"]
+atlas = ExtResource("2_ms0jn")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jb2a2"]
+atlas = ExtResource("2_ms0jn")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vugr"]
+atlas = ExtResource("2_ms0jn")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6j2d2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyja1")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_d0yiv")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_m3uby")
+}, {
+"duration": 0.75,
+"texture": SubResource("AtlasTexture_jb2a2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vugr")
+}],
+"loop": 0,
+"name": &"open",
+"speed": 7.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1gol"]
 size = Vector2(32, 32)
@@ -13,6 +58,26 @@ script = ExtResource("1_o1gol")
 drop_radius_minimum = 32.0
 drop_radius_maximum = 128.0
 
+[node name="Coin" parent="." unique_id=447885250 instance=ExtResource("2_jyja1")]
+visible = false
+monitorable = false
+
+[node name="Coin2" parent="." unique_id=1086721827 instance=ExtResource("2_jyja1")]
+visible = false
+monitorable = false
+
+[node name="Coin3" parent="." unique_id=112356310 instance=ExtResource("2_jyja1")]
+visible = false
+monitorable = false
+
+[node name="Coin4" parent="." unique_id=644425571 instance=ExtResource("2_jyja1")]
+visible = false
+monitorable = false
+
+[node name="Coin5" parent="." unique_id=1382139587 instance=ExtResource("2_jyja1")]
+visible = false
+monitorable = false
+
 [node name="DetectPlayer" type="Area2D" parent="." unique_id=180254239 groups=["not_dropped_from_chest"]]
 collision_layer = 0
 collision_mask = 8
@@ -20,7 +85,13 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectPlayer" unique_id=446124291]
 shape = SubResource("RectangleShape2D_a6585")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1895803154 groups=["not_dropped_from_chest"]]
+[node name="ChestSprite" type="AnimatedSprite2D" parent="." unique_id=527328317 groups=["not_dropped_from_chest"]]
+z_index = -1
+texture_filter = 1
+position = Vector2(0, -8)
+scale = Vector2(1.25, 1.25)
+sprite_frames = SubResource("SpriteFrames_6j2d2")
+animation = &"open"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1508442113 groups=["not_dropped_from_chest"]]
 

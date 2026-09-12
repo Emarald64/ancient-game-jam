@@ -19,7 +19,6 @@ playerSprite = NodePath("CatSprite")
 frame_progress = 0.7605645
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=135320124]
-visible = false
 shape = SubResource("RectangleShape2D_a6585")
 
 [node name="Pickup" type="Area2D" parent="." unique_id=969742239]

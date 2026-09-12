@@ -12,7 +12,8 @@
 [ext_resource type="Script" uid="uid://bjl68sof7gcws" path="res://source/pickups/money_pickup.gd" id="6_s8x7u"]
 [ext_resource type="PackedScene" uid="uid://dyaer2q370u5u" path="res://source/ui/screen_wipe.tscn" id="7_d5d55"]
 [ext_resource type="PackedScene" uid="uid://c00mqs60qi573" path="res://source/pickups/coin.tscn" id="8_rewae"]
-[ext_resource type="PackedScene" uid="uid://du3t3pukavbvk" path="res://source/arrow_spawner.tscn" id="13_lnbay"]
+[ext_resource type="PackedScene" uid="uid://b0hplp6ipk7gj" path="res://source/arrow_spawner.tscn" id="13_lnbay"]
+[ext_resource type="PackedScene" uid="uid://dljttdmrkalih" path="res://source/game_objects/chest.tscn" id="14_r5lv5"]
 
 [node name="Main" type="Node2D" unique_id=1110147883]
 script = ExtResource("1_2uit2")
@@ -98,6 +99,9 @@ tile_set = ExtResource("3_caq8k")
 
 [node name="ArrowSpawner" parent="." unique_id=758422277 instance=ExtResource("13_lnbay")]
 position = Vector2(45, 617)
+
+[node name="Chest" parent="." unique_id=1748872296 instance=ExtResource("14_r5lv5")]
+position = Vector2(613, 262)
 
 [connection signal="collected_money" from="Player" to="UILayer/VBoxContainer/MoneyCounter" method="add_money"]
 [connection signal="time_up" from="UILayer/VBoxContainer/GameTimer" to="UILayer/TimeOutAnimation" method="play"]

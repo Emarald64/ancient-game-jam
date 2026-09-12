@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b0hplp6ipk7gj"]
+
+[ext_resource type="Script" uid="uid://iq8fujmhr2a6" path="res://source/game_objects/arrow_spawner.gd" id="1_g84ck"]
+[ext_resource type="PackedScene" uid="uid://cjaopc2wnvuna" path="res://source/arrow.tscn" id="2_qgvqi"]
+
+[node name="ArrowSpawner" type="Node2D" unique_id=758422277]
+script = ExtResource("1_g84ck")
+arrow_scene = ExtResource("2_qgvqi")
+
+[node name="Timer" type="Timer" parent="." unique_id=740319772]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="shoot_arrow"]
