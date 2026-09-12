@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b01h4mwxfmumd" path="res://source/pickups/base_pickup.tscn" id="4_s8x7u"]
 [ext_resource type="PackedScene" uid="uid://jw2l3450taoy" path="res://source/ui/death_screen.tscn" id="5_1elff"]
 [ext_resource type="Script" uid="uid://bjl68sof7gcws" path="res://source/pickups/money_pickup.gd" id="6_s8x7u"]
-[ext_resource type="PackedScene" uid="uid://bgfdu2q1ei2yl" path="res://source/pickups/good_coin.tscn" id="10_d5d55"]
+[ext_resource type="PackedScene" uid="uid://c00mqs60qi573" path="res://source/pickups/coin.tscn" id="8_rewae"]
 
 [node name="Main" type="Node2D" unique_id=1110147883]
 script = ExtResource("1_2uit2")
@@ -50,25 +50,13 @@ unique_name_in_owner = true
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1317110864]
 tile_set = ExtResource("3_caq8k")
 
-[node name="Pickup" parent="TileMapLayer" unique_id=447885250 instance=ExtResource("4_s8x7u")]
+[node name="Coin" parent="TileMapLayer" unique_id=447885250 instance=ExtResource("8_rewae")]
+position = Vector2(306, 155)
+
+[node name="Pickup" parent="TileMapLayer" unique_id=1231123018 instance=ExtResource("4_s8x7u")]
 position = Vector2(252, 367)
 script = ExtResource("6_s8x7u")
 value = 1000000
-
-[node name="GoodCoin" parent="TileMapLayer" unique_id=1991088649 instance=ExtResource("10_d5d55")]
-position = Vector2(221, 221)
-
-[node name="GoodCoin2" parent="TileMapLayer" unique_id=453468432 instance=ExtResource("10_d5d55")]
-position = Vector2(505, 134)
-
-[node name="GoodCoin3" parent="TileMapLayer" unique_id=1616093097 instance=ExtResource("10_d5d55")]
-position = Vector2(919, 504)
-
-[node name="GoodCoin4" parent="TileMapLayer" unique_id=1882649776 instance=ExtResource("10_d5d55")]
-position = Vector2(644, 544)
-
-[node name="GoodCoin5" parent="TileMapLayer" unique_id=1996748233 instance=ExtResource("10_d5d55")]
-position = Vector2(774, 235)
 
 [connection signal="collected_money" from="Player" to="UILayer/VBoxContainer/MoneyCounter" method="add_money"]
 [connection signal="time_up" from="UILayer/VBoxContainer/GameTimer" to="UILayer/TimeOutAnimation" method="play"]
