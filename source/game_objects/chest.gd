@@ -17,7 +17,8 @@ func open():
 				var tween=create_tween()
 				tween.set_ease(Tween.EASE_OUT)
 				tween.tween_property(drop,"position",drop_target,.5)
-				tween.tween_property(drop, "monitorable", true, 0)
+				if drop is Area2D:
+					tween.tween_property(drop, "monitorable", true, 0)
 				drop.show()
 				if drop.has_method("_on_found_in_chest"):
 					drop._on_found_in_chest()

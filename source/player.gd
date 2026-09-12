@@ -70,10 +70,10 @@ func heal(amount:int):
 	health+=amount
 	update_health()
 
-func hurt(amount:int):
+func hurt(amount:int,damage_type:=DAMAGE_TYPE.unknown):
 	health-=amount
 	if health<=0:
-		die()
+		die(true,damage_type)
 	update_health()
 
 func die(display_death_screen:=true,damage_type:=DAMAGE_TYPE.unknown):
@@ -89,6 +89,7 @@ func update_health():
 func hit(area:Area2D):
 	if not dying:
 		var damage=area.get_meta("damage",1)
-		hurt(damage)
+		var damage_type=area.get_meta("damage_type",DAMAGE_TYPE.unknown)
+		hurt(damage,damage_type)
 		if area.get_meta("remove_on_hit",false):
 			area.queue_free()
