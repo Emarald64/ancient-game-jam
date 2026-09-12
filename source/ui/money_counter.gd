@@ -6,7 +6,7 @@ var count_speed:float
 func _process(delta: float) -> void:
 	if displayed_money<Globals.money:
 		displayed_money=mini(Globals.money,displayed_money+maxi(int(count_speed*delta),1))
-		%Label.text=format_money(displayed_money)
+		%Label.text=Globals.format_money(displayed_money)
 
 func add_money(amount:int):
 	#var new_money_length=format_money(total_money+amount).length()
@@ -17,11 +17,3 @@ func add_money(amount:int):
 	Globals.money+=amount
 	count_speed=maxf(Globals.money-displayed_money,50.0)
 	$AnimationPlayer.play("collect")
-
-static func format_money(money:int)->String:
-	var result=str(money)
-	var i=((result.length()-1)%3)+1
-	while i<result.length():
-		result=result.insert(i,",")
-		i+=4
-	return result

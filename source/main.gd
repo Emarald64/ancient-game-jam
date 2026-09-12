@@ -5,6 +5,7 @@ extends Node2D
 @onready var death_screen=%DeathScreen
 @onready var screen_wipe=%ScreenWipe
 @onready var game_timer=%GameTimer
+@onready var money_counter=%MoneyCounter
 
 func _ready() -> void:
 	Globals.main=self
