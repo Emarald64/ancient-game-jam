@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://jw2l3450taoy"]
+
+[node name="DeathScreen" type="ColorRect" unique_id=791762848]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1170738697]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -239.5
+offset_top = -124.0
+offset_right = 239.5
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "You ran out of time... "
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="." unique_id=271287176]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -198.0
+offset_right = 45.0
+offset_bottom = -147.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "Retry"
