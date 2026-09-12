@@ -1,5 +1,68 @@
 [gd_scene format=3 uid="uid://jw2l3450taoy"]
 
+[ext_resource type="Script" uid="uid://bsdx52pja0cnc" path="res://source/ui/death_screen.gd" id="1_jlj6x"]
+
+[sub_resource type="Animation" id="Animation_gxxlj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_87lch"]
+resource_name = "appear"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_raqh1"]
+_data = {
+&"RESET": SubResource("Animation_gxxlj"),
+&"appear": SubResource("Animation_87lch")
+}
+
 [node name="DeathScreen" type="ColorRect" unique_id=791762848]
 visible = false
 modulate = Color(1, 1, 1, 0)
@@ -8,7 +71,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0.5019608)
+script = ExtResource("1_jlj6x")
 
 [node name="Label" type="Label" parent="." unique_id=1170738697]
 layout_mode = 1
@@ -24,7 +88,6 @@ offset_bottom = -59.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 64
-text = "You ran out of time... "
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="." unique_id=271287176]
@@ -42,3 +105,6 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 48
 text = "Retry"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=476545155]
+libraries/ = SubResource("AnimationLibrary_raqh1")
