@@ -28,27 +28,35 @@ func SpriteDirectionDecider(movement : Vector2) -> void:
 	if movement == Vector2(0,-1):
 		curAnim = 0
 		playerSprite.play("walk_up")
+		$CatSprite/CatSprite2.play("walk_up")
 	elif movement == Vector2(0,1):
 		curAnim = 1
 		playerSprite.play("walk_down")
+		$CatSprite/CatSprite2.play("walk_down")
 	elif movement == Vector2(1,0):
 		curAnim = 2
 		playerSprite.play("walk_right")
+		$CatSprite/CatSprite2.play("walk_right")
 	elif movement == Vector2(-1,0):
 		curAnim = 3
 		playerSprite.play("walk_left")
+		$CatSprite/CatSprite2.play("walk_left")
 	elif movement.is_equal_approx(Vector2(0.707107,-0.707107)):
 		curAnim = 4
 		playerSprite.play("walk_up_right")
+		$CatSprite/CatSprite2.play("walk_up_right")
 	elif movement.is_equal_approx(Vector2(-0.707107,-0.707107)):
 		curAnim = 5
 		playerSprite.play("walk_up_left")
+		$CatSprite/CatSprite2.play("walk_up_left")
 	elif movement.is_equal_approx(Vector2(0.707107,0.707107)):
 		curAnim = 6
 		playerSprite.play("walk_down_right")
+		$CatSprite/CatSprite2.play("walk_down_right")
 	elif movement.is_equal_approx(Vector2(-0.707107,0.707107)):
 		curAnim = 7
 		playerSprite.play("walk_down_left")
+		$CatSprite/CatSprite2.play("walk_down_left")
 		
 	elif movement == Vector2.ZERO:
 		# atm this does not account for the fact that unless you release both diagonal movements
@@ -57,6 +65,9 @@ func SpriteDirectionDecider(movement : Vector2) -> void:
 		playerSprite.stop()
 		playerSprite.animation = "idle_sprites"
 		playerSprite.frame = curAnim
+		$CatSprite/CatSprite2.stop()
+		$CatSprite/CatSprite2.animation = "idle_sprites"
+		$CatSprite/CatSprite2.frame = curAnim
 
 func _on_pickup(pickup: Area2D) -> void:
 	if pickup is MoneyPickup:

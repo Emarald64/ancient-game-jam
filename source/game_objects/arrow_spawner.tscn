@@ -2,12 +2,108 @@
 
 [ext_resource type="Script" uid="uid://iq8fujmhr2a6" path="res://source/game_objects/arrow_spawner.gd" id="1_g84ck"]
 [ext_resource type="PackedScene" uid="uid://dner46b8sxvnu" path="res://source/game_objects/arrow.tscn" id="2_qgvqi"]
+[ext_resource type="Texture2D" uid="uid://wp3kljabh1fj" path="res://arte/game_objects/crossBow.png" id="3_e7a4s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcjqq"]
+atlas = ExtResource("3_e7a4s")
+region = Rect2(0, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky0ui"]
+atlas = ExtResource("3_e7a4s")
+region = Rect2(54, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unn62"]
+atlas = ExtResource("3_e7a4s")
+region = Rect2(108, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vs2nc"]
+atlas = ExtResource("3_e7a4s")
+region = Rect2(162, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqe3y"]
+atlas = ExtResource("3_e7a4s")
+region = Rect2(216, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_717p8"]
+atlas = ExtResource("3_e7a4s")
+region = Rect2(270, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jln0e"]
+atlas = ExtResource("3_e7a4s")
+region = Rect2(324, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2o71"]
+atlas = ExtResource("3_e7a4s")
+region = Rect2(378, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iroq8"]
+atlas = ExtResource("3_e7a4s")
+region = Rect2(432, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dpop"]
+atlas = ExtResource("3_e7a4s")
+region = Rect2(486, 0, 54, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6j2d2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcjqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ky0ui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unn62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vs2nc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqe3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_717p8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jln0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2o71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iroq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dpop")
+}],
+"loop": 0,
+"name": &"shoot",
+"speed": 12.0
+}]
 
 [node name="ArrowSpawner" type="Node2D" unique_id=758422277]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_g84ck")
 arrow_scene = ExtResource("2_qgvqi")
 
 [node name="Timer" type="Timer" parent="." unique_id=740319772]
 autostart = true
+
+[node name="CrossbowSprite" type="AnimatedSprite2D" parent="." unique_id=1880765050]
+texture_filter = 1
+rotation = -1.5707964
+sprite_frames = SubResource("SpriteFrames_6j2d2")
+animation = &"shoot"
+
+[node name="CrossbowSprite2" type="AnimatedSprite2D" parent="." unique_id=1250990131]
+modulate = Color(0, 0, 0, 0.41568628)
+z_index = -1
+texture_filter = 1
+position = Vector2(-2.6666667, -3.157968e-15)
+rotation = -1.5707964
+scale = Vector2(1.11, 1.11)
+sprite_frames = SubResource("SpriteFrames_6j2d2")
+animation = &"shoot"
 
 [connection signal="timeout" from="Timer" to="." method="shoot_arrow"]

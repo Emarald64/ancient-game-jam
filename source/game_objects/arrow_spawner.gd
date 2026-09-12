@@ -9,6 +9,8 @@ func _ready() -> void:
 	$Timer.wait_time=arrow_cooldown
 
 func shoot_arrow() -> void:
+	$CrossbowSprite.play("shoot")
+	$CrossbowSprite2.play("shoot")
 	var arrow=arrow_scene.instantiate()
 	arrow.velocity=arrow_velocity
 	arrow.time_limit=arrow_lifetime
