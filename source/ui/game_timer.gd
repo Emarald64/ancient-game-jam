@@ -1,7 +1,7 @@
 extends Label
 
 var time_startup=.5
-var time_left:=1.0
+@export var time_left:=1.0
 const START_FLASING:=15
 var sent_time_up:=false
 

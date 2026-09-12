@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b01h4mwxfmumd" path="res://source/pickups/base_pickup.tscn" id="4_s8x7u"]
 [ext_resource type="PackedScene" uid="uid://jw2l3450taoy" path="res://source/ui/death_screen.tscn" id="5_1elff"]
 [ext_resource type="Script" uid="uid://bjl68sof7gcws" path="res://source/pickups/money_pickup.gd" id="6_s8x7u"]
+[ext_resource type="PackedScene" uid="uid://bgfdu2q1ei2yl" path="res://source/pickups/good_coin.tscn" id="10_d5d55"]
 
 [node name="Main" type="Node2D" unique_id=1110147883]
 script = ExtResource("1_2uit2")
@@ -17,6 +18,16 @@ script = ExtResource("1_2uit2")
 unique_name_in_owner = true
 position = Vector2(468, 306)
 main = NodePath("..")
+
+[node name="playerCam" type="Camera2D" parent="Player" unique_id=1217677857]
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.15
+drag_top_margin = 0.15
+drag_right_margin = 0.15
+drag_bottom_margin = 0.15
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=296706503]
 
@@ -43,6 +54,21 @@ tile_set = ExtResource("3_caq8k")
 position = Vector2(252, 367)
 script = ExtResource("6_s8x7u")
 value = 1000000
+
+[node name="GoodCoin" parent="TileMapLayer" unique_id=1991088649 instance=ExtResource("10_d5d55")]
+position = Vector2(221, 221)
+
+[node name="GoodCoin2" parent="TileMapLayer" unique_id=453468432 instance=ExtResource("10_d5d55")]
+position = Vector2(505, 134)
+
+[node name="GoodCoin3" parent="TileMapLayer" unique_id=1616093097 instance=ExtResource("10_d5d55")]
+position = Vector2(919, 504)
+
+[node name="GoodCoin4" parent="TileMapLayer" unique_id=1882649776 instance=ExtResource("10_d5d55")]
+position = Vector2(644, 544)
+
+[node name="GoodCoin5" parent="TileMapLayer" unique_id=1996748233 instance=ExtResource("10_d5d55")]
+position = Vector2(774, 235)
 
 [connection signal="collected_money" from="Player" to="UILayer/VBoxContainer/MoneyCounter" method="add_money"]
 [connection signal="time_up" from="UILayer/VBoxContainer/GameTimer" to="UILayer/TimeOutAnimation" method="play"]

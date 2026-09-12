@@ -6,5 +6,6 @@
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("1_7k1th")
+time_left = 800.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=363948122]
