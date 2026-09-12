@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cd28c0hrtlep"]
+
+[ext_resource type="Script" uid="uid://b41ib2pp03oyx" path="res://source/game_objects/bomb.gd" id="1_w1jnd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a6585"]
+radius = 256.0
+
+[node name="Bomb" type="Node2D" unique_id=1321889438]
+script = ExtResource("1_w1jnd")
+
+[node name="Explosion" type="Area2D" parent="." unique_id=431866902]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosion" unique_id=1186948093]
+shape = SubResource("CircleShape2D_a6585")
+
+[node name="Timer" type="Timer" parent="." unique_id=167114359]

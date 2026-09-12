@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dljttdmrkalih"]
+
+[ext_resource type="Script" uid="uid://bpw4cnyi6agdr" path="res://source/game_objects/chest.gd" id="1_o1gol"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6585"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1gol"]
+size = Vector2(32, 32)
+
+[node name="Chest" type="Node2D" unique_id=1748872296]
+script = ExtResource("1_o1gol")
+drop_radius_minimum = 32.0
+drop_radius_maximum = 128.0
+
+[node name="DetectPlayer" type="Area2D" parent="." unique_id=180254239 groups=["not_dropped_from_chest"]]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectPlayer" unique_id=446124291]
+shape = SubResource("RectangleShape2D_a6585")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1895803154 groups=["not_dropped_from_chest"]]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1508442113 groups=["not_dropped_from_chest"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=30506421]
+shape = SubResource("RectangleShape2D_o1gol")
+
+[connection signal="body_entered" from="DetectPlayer" to="." method="open" unbinds=1]

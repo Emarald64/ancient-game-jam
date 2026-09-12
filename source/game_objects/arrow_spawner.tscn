@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://du3t3pukavbvk"]
 
-[ext_resource type="Script" uid="uid://iq8fujmhr2a6" path="res://source/arrow_spawner.gd" id="1_g84ck"]
-[ext_resource type="PackedScene" uid="uid://dner46b8sxvnu" path="res://source/arrow.tscn" id="2_qgvqi"]
+[ext_resource type="Script" uid="uid://iq8fujmhr2a6" path="res://source/game_objects/arrow_spawner.gd" id="1_g84ck"]
+[ext_resource type="PackedScene" uid="uid://dner46b8sxvnu" path="res://source/game_objects/arrow.tscn" id="2_qgvqi"]
 
 [node name="ArrowSpawner" type="Node2D" unique_id=758422277]
 script = ExtResource("1_g84ck")
