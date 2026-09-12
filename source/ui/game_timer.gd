@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 		text=format_time(maxi(int(time_left*1000),0))
 		var flash_progress:=0.0
 		if time_left<START_FLASING:
-			flash_progress=sin((((START_FLASING-time_left)/2)**2)*3)
+			flash_progress=(sin((((START_FLASING-time_left)/2)**2)*3)+1)/2
 		if time_left<=0:
 			flash_progress=1.0
 			if not sent_time_up:

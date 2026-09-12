@@ -74,6 +74,7 @@ debug_restart={
 2d_physics/layer_1="wall"
 2d_physics/layer_2="pickup"
 2d_physics/layer_3="damage"
+2d_physics/layer_4="player"
 
 [physics]
 
