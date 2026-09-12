@@ -1,25 +1,22 @@
 [gd_scene format=3 uid="uid://dut4kwctm6nl"]
 
+[ext_resource type="Script" uid="uid://b873hjapey7" path="res://source/main.gd" id="1_2uit2"]
 [ext_resource type="PackedScene" uid="uid://c371gspmx2x7j" path="res://source/player.tscn" id="1_kaxhg"]
 [ext_resource type="PackedScene" uid="uid://b3g4yrvnavcsi" path="res://source/ui/game_timer.tscn" id="2_62cc7"]
 [ext_resource type="PackedScene" uid="uid://dm176ci0ctmpm" path="res://source/ui/money_counter.tscn" id="3_c1q7g"]
 [ext_resource type="TileSet" uid="uid://doybb3uq46ygn" path="res://source/tile_set.tres" id="3_caq8k"]
-[ext_resource type="Texture2D" uid="uid://dfhhot67qmwag" path="res://arte/light.png" id="6_s8x7u"]
-[ext_resource type="PackedScene" uid="uid://bgfdu2q1ei2yl" path="res://source/pickups/good_coin.tscn" id="7_4naa1"]
-
-[sub_resource type="Gradient" id="Gradient_4naa1"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_6j2d2"]
-gradient = SubResource("Gradient_4naa1")
-fill = 1
-fill_from = Vector2(0.44729346, 0.4871795)
-fill_to = Vector2(0.15099715, 0.25071225)
+[ext_resource type="PackedScene" uid="uid://hgxjysbpdkyq" path="res://source/ui/time_out_animation.tscn" id="4_4naa1"]
+[ext_resource type="PackedScene" uid="uid://b01h4mwxfmumd" path="res://source/pickups/base_pickup.tscn" id="4_s8x7u"]
+[ext_resource type="PackedScene" uid="uid://jw2l3450taoy" path="res://source/ui/death_screen.tscn" id="5_1elff"]
+[ext_resource type="Script" uid="uid://bjl68sof7gcws" path="res://source/pickups/money_pickup.gd" id="6_s8x7u"]
 
 [node name="Main" type="Node2D" unique_id=1110147883]
+script = ExtResource("1_2uit2")
 
-[node name="Player" parent="." unique_id=610998424 instance=ExtResource("1_kaxhg")]
+[node name="Player" parent="." unique_id=610998424 node_paths=PackedStringArray("main") instance=ExtResource("1_kaxhg")]
+unique_name_in_owner = true
 position = Vector2(468, 306)
+main = NodePath("..")
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=296706503]
 
@@ -33,6 +30,11 @@ text = "1:00.00"
 
 [node name="MoneyCounter" parent="UILayer/VBoxContainer" unique_id=536954178 instance=ExtResource("3_c1q7g")]
 layout_mode = 2
+
+[node name="TimeOutAnimation" parent="UILayer" unique_id=603268710 instance=ExtResource("4_4naa1")]
+
+[node name="DeathScreen" parent="UILayer" unique_id=791762848 instance=ExtResource("5_1elff")]
+unique_name_in_owner = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1317110864]
 tile_set = ExtResource("3_caq8k")
@@ -52,3 +54,6 @@ scale = Vector2(2.34375, 2.34375)
 texture = ExtResource("6_s8x7u")
 
 [connection signal="collected_money" from="Player" to="UILayer/VBoxContainer/MoneyCounter" method="add_money"]
+[connection signal="time_up" from="UILayer/VBoxContainer/GameTimer" to="UILayer/TimeOutAnimation" method="play"]
+[connection signal="time_up" from="UILayer/VBoxContainer/GameTimer" to="Player" method="die" binds= [false]]
+[connection signal="show_death_screen" from="UILayer/TimeOutAnimation" to="UILayer/DeathScreen" method="appear" binds= [0]]
