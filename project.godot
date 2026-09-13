@@ -35,6 +35,10 @@ window/stretch/mode="viewport"
 
 project/assembly_name="New Game Project"
 
+[global_group]
+
+has_on_escape_start=""
+
 [gui]
 
 theme/custom="uid://bcnc33fc0ij5p"

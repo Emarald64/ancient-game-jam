@@ -1,6 +1,10 @@
 class_name Main
 extends Node2D
 
+var camera_shake_intencity:=0.0
+var start_time=Time.get_ticks_msec()
+var escaping:=false
+
 @onready var player=%Player
 @onready var time_out_animation=%TimeOutAnimation
 @onready var death_screen=%DeathScreen
@@ -8,6 +12,7 @@ extends Node2D
 @onready var game_timer=%GameTimer
 @onready var money_counter=%MoneyCounter
 @onready var camera=%playerCam
+@onready var win_screen=%WinScreen
 
 func _ready() -> void:
 	Globals.main=self
@@ -17,11 +22,23 @@ func _ready() -> void:
 		Globals.restarting=false
 		await get_tree().process_frame
 		RenderingServer.set_default_clear_color(Color("4d4d4d"))
-	start_game()
+	#start_game()
 
-func start_game():
-	game_timer.running=true
+func _process(delta: float) -> void:
+	if Input.is_key_pressed(KEY_Y):
+		start_escape()
+	if camera_shake_intencity>0:
+		camera.offset=50*Vector2(randf(),randf())*camera_shake_intencity
+		camera_shake_intencity-=delta
+#
+#func start_game():
+	#game_timer.running=true
 
+func shake_camera():
+	camera_shake_intencity=1
 
-func _on_signarea_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+func start_escape():
+	shake_camera()
+	game_timer.start()
+	escaping=true
+	get_tree().call_group("has_on_escape_start","on_escape_start")
