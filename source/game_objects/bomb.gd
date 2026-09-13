@@ -15,6 +15,7 @@ func explode():
 	tween.tween_property($Explosion/CollisionShape2D.shape,"radius",256,.1)
 	tween.tween_interval(.65)
 	tween.tween_callback(queue_free)
+	$sound.play()
 	
 	await get_tree().create_timer(0.25).timeout
 	$Explosion.monitorable=false

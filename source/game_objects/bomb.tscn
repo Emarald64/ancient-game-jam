@@ -4,6 +4,7 @@
 [ext_resource type="Shader" uid="uid://5h4f7aaql8iw" path="res://source/game_objects/bomb_flash.gdshader" id="2_54trm"]
 [ext_resource type="Texture2D" uid="uid://dnxtv7fqumphm" path="res://arte/game_objects/bomb.png" id="3_sy3ph"]
 [ext_resource type="Texture2D" uid="uid://ct2c2txqyso1o" path="res://arte/pickups/explosion.png" id="4_og2dt"]
+[ext_resource type="AudioStream" uid="uid://cgcs3aut2cv0j" path="res://sfx/explode.wav" id="5_o0u21"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a6585"]
 radius = 0.01
@@ -126,5 +127,8 @@ sprite_frames = SubResource("SpriteFrames_6j2d2")
 animation = &"explosion"
 frame = 11
 frame_progress = 1.0
+
+[node name="sound" type="AudioStreamPlayer" parent="." unique_id=1581140679]
+stream = ExtResource("5_o0u21")
 
 [connection signal="timeout" from="Timer" to="." method="explode"]

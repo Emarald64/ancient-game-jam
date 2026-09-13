@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://dyhuebejbhm5b" path="res://source/hole.tscn" id="2_mwjqb"]
 [ext_resource type="Script" uid="uid://dwkk53c72ia1q" path="res://source/cat_sprite.gd" id="3_mwjqb"]
 [ext_resource type="Texture2D" uid="uid://bea0dciou80at" path="res://arte/rope.png" id="4_t71p0"]
+[ext_resource type="AudioStream" uid="uid://d1u0tshk14lup" path="res://sfx/meow.mp3" id="6_t71p0"]
+[ext_resource type="AudioStream" uid="uid://dcpktdvviyd0" path="res://sfx/catflinch.wav" id="7_gqehw"]
+[ext_resource type="AudioStream" uid="uid://dmpmcxvf5gcy0" path="res://sfx/purring.mp3" id="8_tl8wf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hd2yd"]
 atlas = ExtResource("2_l788v")
@@ -848,5 +851,21 @@ speed_scale = 2.66
 explosiveness = 0.84
 process_material = SubResource("ParticleProcessMaterial_6j2d2")
 
+[node name="Meow =3" type="AudioStreamPlayer" parent="." unique_id=250120182]
+stream = ExtResource("6_t71p0")
+max_polyphony = 6
+
+[node name="Hurt Sound" type="AudioStreamPlayer" parent="." unique_id=993893433]
+stream = ExtResource("7_gqehw")
+
+[node name="Heal Sound" type="AudioStreamPlayer" parent="." unique_id=214849024]
+stream = ExtResource("8_tl8wf")
+volume_db = 10.0
+
+[node name="IFrames" type="Timer" parent="." unique_id=914245680]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="area_entered" from="Pickup" to="." method="_on_pickup"]
 [connection signal="area_entered" from="HurtBox" to="." method="hit"]
+[connection signal="timeout" from="IFrames" to="." method="end_iframes"]
