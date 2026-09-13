@@ -3,4 +3,5 @@
 [ext_resource type="Texture2D" uid="uid://cutuvg0s8xmg7" path="res://arte/hole.webp" id="1_vscl4"]
 
 [node name="Hole" type="Sprite2D" unique_id=147832886]
+texture_filter = 1
 texture = ExtResource("1_vscl4")
