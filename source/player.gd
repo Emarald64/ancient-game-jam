@@ -107,11 +107,11 @@ func hit(area:Area2D):
 			$spanim1.play("default")
 			animating=true
 			var tween=create_tween()
-			tween.tween_property(self,"scale",Vector2.ZERO,1)
+			tween.tween_property(playerSprite,"scale",Vector2.ZERO,1)
 			tween.tween_callback(hurt.bind(1,DAMAGE_TYPE.pit))
 			if health>1:
 				tween.tween_property(self,"global_position",area.respawn_target.global_position,0)
-				tween.tween_property(self,"scale",Vector2(.7,.7),0)
+				tween.tween_property(playerSprite,"scale",Vector2.ONE,0)
 				tween.tween_interval(.5)
 				tween.tween_property(self,"animating",false,0)
 		else:
