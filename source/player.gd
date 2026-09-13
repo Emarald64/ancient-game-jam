@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
-const SPEED = 400.0
+var SPEED = 250.0
 @export var playerSprite : AnimatedSprite2D
 var curAnim : int = 0
 const DAMAGE_TYPE=Globals.DAMAGE_TYPE
@@ -18,7 +18,16 @@ func _physics_process(_delta: float) -> void:
 	if not dying and not animating && canMove:
 		var movement=Input.get_vector("move_left","move_right","move_up","move_down")
 		SpriteDirectionDecider(movement)
-
+		
+		if Input.is_action_pressed("sprint"):
+			SPEED = 400
+			playerSprite.speed_scale = 14
+			$CatSprite/CatSprite2.speed_scale = 14
+		else:
+			SPEED = 200
+			playerSprite.speed_scale = 8
+			$CatSprite/CatSprite2.speed_scale = 8
+		
 		velocity=movement*SPEED
 
 		move_and_slide()

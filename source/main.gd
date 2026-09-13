@@ -21,3 +21,7 @@ func _ready() -> void:
 
 func start_game():
 	game_timer.running=true
+
+
+func _on_signarea_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
