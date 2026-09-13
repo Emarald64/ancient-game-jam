@@ -8,6 +8,10 @@ var age:=0.0
 func _ready() -> void:
 	velocity_dir = Vector2(1, 0 + randf_range(-0.075, 0.075))
 	velocity_dir = velocity_dir.normalized()
+	
+	look_at(to_global(velocity_dir))
+	
+	
 
 func _physics_process(delta: float) -> void:
 	position+=velocity_dir * velocity_magnitude * delta

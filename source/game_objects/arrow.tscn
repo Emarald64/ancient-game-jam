@@ -6,6 +6,27 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6585"]
 size = Vector2(22, 8)
 
+[sub_resource type="Curve" id="Curve_ckxgq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.5568845, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_48c3i"]
+curve = SubResource("Curve_ckxgq")
+
+[sub_resource type="Gradient" id="Gradient_4kjtf"]
+colors = PackedColorArray(0.51850265, 0.51850265, 0.51850265, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_445yb"]
+gradient = SubResource("Gradient_4kjtf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6j2d2"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_min = 3.0
+scale_max = 4.0
+color_initial_ramp = SubResource("GradientTexture1D_445yb")
+alpha_curve = SubResource("CurveTexture_48c3i")
+
 [node name="Arrow" type="Area2D" unique_id=69683953]
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
@@ -23,5 +44,9 @@ texture = ExtResource("2_4kjtf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1604702037]
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_a6585")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=420728589]
+position = Vector2(-12.000001, 0)
+process_material = SubResource("ParticleProcessMaterial_6j2d2")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
