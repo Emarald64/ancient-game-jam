@@ -10,7 +10,6 @@ size = Vector2(22, 8)
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
 collision_layer = 4
-collision_mask = 0
 script = ExtResource("1_ytg3r")
 time_limit = 0.5
 metadata/remove_on_hit = true
@@ -24,3 +23,5 @@ texture = ExtResource("2_4kjtf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1604702037]
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_a6585")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

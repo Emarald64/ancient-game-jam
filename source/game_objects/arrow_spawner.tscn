@@ -91,9 +91,9 @@ script = ExtResource("1_g84ck")
 arrow_scene = ExtResource("2_qgvqi")
 
 [node name="Timer" type="Timer" parent="." unique_id=740319772]
-autostart = true
 
 [node name="CrossbowSprite" type="AnimatedSprite2D" parent="." unique_id=1880765050]
+z_index = 5
 texture_filter = 1
 rotation = -1.5707964
 sprite_frames = SubResource("SpriteFrames_6j2d2")
@@ -101,7 +101,7 @@ animation = &"shoot"
 
 [node name="CrossbowSprite2" type="AnimatedSprite2D" parent="." unique_id=1250990131]
 modulate = Color(0, 0, 0, 0.41568628)
-z_index = -1
+z_index = 4
 texture_filter = 1
 position = Vector2(-2.6666667, -3.157968e-15)
 rotation = -1.5707964

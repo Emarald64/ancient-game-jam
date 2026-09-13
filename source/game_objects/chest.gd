@@ -20,8 +20,8 @@ func open():
 				tween.set_ease(Tween.EASE_OUT)
 				tween.tween_property(drop,"position",drop_target,.5)
 			
-				tween2.tween_property(drop, "scale", (drop as Node2D).scale * 1.50, .25)
-				tween2.tween_property(drop, "scale", (drop as Node2D).scale, .25)
+				tween2.tween_property(drop, "scale", (drop as Node2D).scale * 1.50, .25).set_trans(Tween.TRANS_BOUNCE)
+				tween2.tween_property(drop, "scale", (drop as Node2D).scale, .25).set_trans(Tween.TRANS_BOUNCE)
 				
 				if drop is Area2D:
 					tween.tween_property(drop, "monitorable", true, 0)

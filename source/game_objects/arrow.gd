@@ -9,3 +9,9 @@ func _physics_process(delta: float) -> void:
 	age+=delta
 	if age>time_limit:
 		queue_free()
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if age > 0.05:
+		queue_free()
+	pass # Replace with function body.
