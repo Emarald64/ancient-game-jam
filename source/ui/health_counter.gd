@@ -10,6 +10,8 @@ func _ready():
 	update_displayed_health()
 
 func update_health(new_health:int):
+	if new_health!=current_health:
+		anim_player.advance(1)
 	if new_health<current_health:
 		anim_player.play("decrease_health")
 	elif new_health>current_health:
