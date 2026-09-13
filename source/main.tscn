@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://jw2l3450taoy" path="res://source/ui/death_screen.tscn" id="5_1elff"]
 [ext_resource type="PackedScene" uid="uid://dyaer2q370u5u" path="res://source/ui/screen_wipe.tscn" id="7_d5d55"]
 [ext_resource type="PackedScene" uid="uid://c00mqs60qi573" path="res://source/pickups/coin.tscn" id="8_rewae"]
+[ext_resource type="PackedScene" uid="uid://fctd563d0wnr" path="res://source/ui/win_screen.tscn" id="10_771tj"]
 [ext_resource type="Script" uid="uid://bj2gr2fw4nxjo" path="res://source/blehhh.gd" id="12_sm8so"]
 [ext_resource type="PackedScene" uid="uid://dljttdmrkalih" path="res://source/game_objects/chest.tscn" id="14_r5lv5"]
 [ext_resource type="Texture2D" uid="uid://ddou6yvvv0b62" path="res://arte/deco/paintings1.png" id="15_7rnte"]
@@ -23,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://6x7qius0hbvs" path="res://arte/deco/chandelierREALt.png" id="19_d4qgt"]
 [ext_resource type="PackedScene" uid="uid://du3t3pukavbvk" path="res://source/game_objects/arrow_spawner.tscn" id="19_sm8so"]
 [ext_resource type="PackedScene" uid="uid://c37w6aw1kfkda" path="res://source/extra_rooms/path_highlight_room.tscn" id="19_vjn7t"]
+[ext_resource type="PackedScene" uid="uid://bnpanluy72urm" path="res://source/escape_area.tscn" id="25_cv3e8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6j2d2"]
 size = Vector2(64.68817, 56.4301)
@@ -35,6 +37,9 @@ gradient = SubResource("Gradient_d4qgt")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.8888889, 0.86609685)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6585"]
+size = Vector2(646, 253)
 
 [node name="Main" type="Node2D" unique_id=1110147883]
 script = ExtResource("1_2uit2")
@@ -103,19 +108,24 @@ offset_top = 8.0
 offset_right = 161.0
 offset_bottom = 142.0
 
-[node name="GameTimer" parent="UILayer/VBoxContainer" unique_id=926535582 instance=ExtResource("2_62cc7")]
-unique_name_in_owner = true
-layout_mode = 2
-text = "1:00.00"
-
 [node name="MoneyCounter" parent="UILayer/VBoxContainer" unique_id=536954178 instance=ExtResource("3_c1q7g")]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="GameTimer" parent="UILayer/VBoxContainer" unique_id=926535582 instance=ExtResource("2_62cc7")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "1:00.00"
+time_left = 60.0
 
 [node name="TimeOutAnimation" parent="UILayer" unique_id=603268710 instance=ExtResource("4_4naa1")]
 unique_name_in_owner = true
 
 [node name="DeathScreen" parent="UILayer" unique_id=791762848 instance=ExtResource("5_1elff")]
+unique_name_in_owner = true
+
+[node name="WinScreen" parent="UILayer" unique_id=811783318 instance=ExtResource("10_771tj")]
 unique_name_in_owner = true
 
 [node name="ScreenWipe" parent="UILayer" unique_id=1574779303 instance=ExtResource("7_d5d55")]
@@ -919,6 +929,13 @@ position = Vector2(314.00003, 291)
 
 [node name="PathHighlightRoom" parent="." unique_id=2111387179 instance=ExtResource("19_vjn7t")]
 position = Vector2(-1056, -256)
+
+[node name="EscapeArea" parent="." unique_id=360951397 instance=ExtResource("25_cv3e8")]
+position = Vector2(352, 375)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EscapeArea" unique_id=791817208]
+position = Vector2(259, 21.5)
+shape = SubResource("RectangleShape2D_a6585")
 
 [connection signal="body_entered" from="Sign/signarea" to="Sign/signarea" method="_on_body_entered"]
 [connection signal="body_exited" from="Sign/signarea" to="Sign/signarea" method="_on_body_exited"]

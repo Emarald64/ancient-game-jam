@@ -16,7 +16,7 @@ size = Vector2(104, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rnfdj"]
 size = Vector2(168, 48)
 
-[node name="PathHighlightRoom" type="Node2D" unique_id=2111387179]
+[node name="PathHighlightRoom" type="Node2D" unique_id=2111387179 groups=["has_on_escape_start"]]
 script = ExtResource("1_tke8u")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=538703152]
@@ -35,6 +35,11 @@ shape = SubResource("RectangleShape2D_a6585")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="ShowPaths" unique_id=1663179878]
 position = Vector2(128, 208)
 shape = SubResource("RectangleShape2D_sf58l")
+
+[node name="CollisionShape2D_escape" type="CollisionShape2D" parent="ShowPaths" unique_id=1153361198]
+position = Vector2(128, -83)
+shape = SubResource("RectangleShape2D_a6585")
+disabled = true
 
 [node name="PathHighlights" type="Node2D" parent="." unique_id=677550355]
 unique_name_in_owner = true
@@ -68,10 +73,13 @@ position = Vector2(32, -40)
 polygon = PackedVector2Array(-96, 24, 168, 24, 168, 72, 152, 72, 152, 32, -88, 32, -88, 184, -96, 184)
 
 [node name="RespawnPos1" type="Marker2D" parent="." unique_id=1039762612]
-position = Vector2(224, 384)
+position = Vector2(96, 400)
 
 [node name="RespawnPos2" type="Marker2D" parent="." unique_id=381636537]
-position = Vector2(224, 208)
+position = Vector2(88, 208)
+
+[node name="RespawnPos3" type="Marker2D" parent="." unique_id=296176999]
+position = Vector2(256, -80)
 
 [connection signal="body_entered" from="ShowPaths" to="." method="highlight_path" unbinds=1]
 [connection signal="body_exited" from="ShowPaths" to="." method="unhighlight_path" unbinds=1]

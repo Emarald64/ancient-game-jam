@@ -116,6 +116,11 @@ func die(display_death_screen:=true,damage_type:=DAMAGE_TYPE.unknown):
 func update_health():
 	health_counter.update_health(health)
 
+func play_win_animation():
+	animating=true
+	# play reverse start animation here
+	main.win_screen.appear()
+
 func hit(area:Area2D):
 	if not dying:
 		if area is SpikePit:
