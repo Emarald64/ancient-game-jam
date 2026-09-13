@@ -14,6 +14,8 @@ func _ready() -> void:
 func shoot_arrow() -> void:
 	$CrossbowSprite.play("shoot")
 	$CrossbowSprite2.play("shoot")
+	$CrossbowSprite.speed_scale = 1/arrow_cooldown
+	$CrossbowSprite2.speed_scale = 1/arrow_cooldown
 	var arrow=arrow_scene.instantiate()
 	arrow.velocity_magnitude = arrow_velocity
 	arrow.time_limit=arrow_lifetime
