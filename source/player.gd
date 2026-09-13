@@ -94,7 +94,7 @@ func _on_pickup(pickup: Area2D) -> void:
 		pickup.queue_free()
 
 func heal(amount:int):
-	health=mini(amount,max_health)
+	health=mini(health+amount,max_health)
 	update_health()
 
 func hurt(amount:int,damage_type:=DAMAGE_TYPE.unknown):
