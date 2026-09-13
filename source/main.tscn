@@ -9,9 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dm176ci0ctmpm" path="res://source/ui/money_counter.tscn" id="3_c1q7g"]
 [ext_resource type="TileSet" uid="uid://doybb3uq46ygn" path="res://source/tile_set.tres" id="3_caq8k"]
 [ext_resource type="PackedScene" uid="uid://hgxjysbpdkyq" path="res://source/ui/time_out_animation.tscn" id="4_4naa1"]
-[ext_resource type="PackedScene" uid="uid://b01h4mwxfmumd" path="res://source/pickups/base_pickup.tscn" id="4_s8x7u"]
 [ext_resource type="PackedScene" uid="uid://jw2l3450taoy" path="res://source/ui/death_screen.tscn" id="5_1elff"]
-[ext_resource type="Script" uid="uid://bjl68sof7gcws" path="res://source/pickups/money_pickup.gd" id="6_s8x7u"]
 [ext_resource type="PackedScene" uid="uid://dyaer2q370u5u" path="res://source/ui/screen_wipe.tscn" id="7_d5d55"]
 [ext_resource type="PackedScene" uid="uid://c00mqs60qi573" path="res://source/pickups/coin.tscn" id="8_rewae"]
 [ext_resource type="Script" uid="uid://bj2gr2fw4nxjo" path="res://source/blehhh.gd" id="12_sm8so"]
@@ -43,7 +41,6 @@ script = ExtResource("1_2uit2")
 [node name="Sign" type="Sprite2D" parent="." unique_id=78767921]
 texture_filter = 1
 position = Vector2(705, 386)
-scale = Vector2(1.453125, 1.453125)
 texture = ExtResource("2_ly4gw")
 
 [node name="signarea" type="Area2D" parent="Sign" unique_id=671217805]
@@ -52,12 +49,12 @@ script = ExtResource("3_771tj")
 [node name="Label" type="Label" parent="Sign/signarea" unique_id=204271128]
 modulate = Color(1, 1, 1, 0)
 texture_filter = 1
-offset_left = -77.76343
-offset_top = -69.50537
-offset_right = 38.236572
-offset_bottom = -4.505371
+offset_left = -203.0
+offset_top = 15.0
+offset_right = 58.0
+offset_bottom = 120.0
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 24
 text = "Controls:
 WASD / 🡐 🡒 🡑 🡓 to move
 Shift to sprint"
@@ -67,14 +64,7 @@ position = Vector2(0, 11.010773)
 shape = SubResource("RectangleShape2D_6j2d2")
 
 [node name="Coin" parent="." unique_id=447885250 instance=ExtResource("8_rewae")]
-visible = false
 position = Vector2(306, 155)
-
-[node name="Pickup" parent="." unique_id=1231123018 instance=ExtResource("4_s8x7u")]
-visible = false
-position = Vector2(252, 367)
-script = ExtResource("6_s8x7u")
-value = 1000000
 
 [node name="Player" parent="." unique_id=610998424 node_paths=PackedStringArray("main", "health_counter") instance=ExtResource("1_kaxhg")]
 unique_name_in_owner = true
