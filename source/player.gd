@@ -3,11 +3,13 @@ class_name Player
 
 var SPEED = 250.0
 @export var playerSprite : AnimatedSprite2D
+@export var hole_scene:PackedScene
 var curAnim : int = 0
 const DAMAGE_TYPE=Globals.DAMAGE_TYPE
 
 var canMove : bool = true
-var health:=4
+var health:=5
+var max_health:=5
 var dying:=false
 var animating:=false
 @export var main:Main
@@ -85,12 +87,14 @@ func _on_pickup(pickup: Area2D) -> void:
 		print("got pickup worth ",pickup.value)
 		collected_money.emit(pickup.value)
 	if pickup is HealthPickup:
+		if health>=max_health:
+			return
 		heal(pickup.heals_for)
 	if pickup is Pickup:
 		pickup.queue_free()
 
 func heal(amount:int):
-	health+=amount
+	health=mini(amount,max_health)
 	update_health()
 
 func hurt(amount:int,damage_type:=DAMAGE_TYPE.unknown):
@@ -115,12 +119,18 @@ func update_health():
 func hit(area:Area2D):
 	if not dying:
 		if area is SpikePit:
-			$spanim1.play("default")
+			var hole:Node2D=hole_scene.instantiate()
+			main.add_child(hole)
+			hole.global_position=global_position
 			animating=true
 			var tween=create_tween()
+			tween.set_parallel(true)
 			tween.tween_property(playerSprite,"scale",Vector2.ZERO,1)
+			tween.tween_property(playerSprite,"position",Vector2(0,25),1)
+			tween.set_parallel(false)
 			tween.tween_callback(hurt.bind(1,DAMAGE_TYPE.pit))
 			if health>1:
+				tween.tween_property(playerSprite,"position",Vector2.ZERO,0)
 				tween.tween_property(self,"global_position",area.respawn_target.global_position,0)
 				tween.tween_property(playerSprite,"scale",Vector2.ONE,0)
 				tween.tween_interval(.5)

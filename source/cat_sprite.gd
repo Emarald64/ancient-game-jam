@@ -29,7 +29,7 @@ func give_player_control() -> void:
 
 func set_idle_sprite(index : int) -> void:
 	index = wrap(index, 0, 8)
-	print(index)
+	#print(index)
 	animation = "idle_sprites_2"
 	frame = index
 	

@@ -1,10 +1,13 @@
 class_name HealthCounter
 extends Control
 
-@export var current_health:=4
-@export var max_health:=4
+@export var current_health:=5
+@export var max_health:=5
 
 @onready var anim_player=$AnimationPlayer
+
+func _ready():
+	update_displayed_health()
 
 func update_health(new_health:int):
 	if new_health<current_health:

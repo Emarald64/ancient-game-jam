@@ -5,16 +5,16 @@
 [ext_resource type="PackedScene" uid="uid://cjmdlmaj6gf1i" path="res://source/game_objects/spike_pit.tscn" id="3_sf58l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6585"]
-size = Vector2(64, 64)
+size = Vector2(368, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sf58l"]
-size = Vector2(64, 64)
+size = Vector2(384, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ahak"]
-size = Vector2(112, 64)
+size = Vector2(104, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rnfdj"]
-size = Vector2(176, 64)
+size = Vector2(168, 48)
 
 [node name="PathHighlightRoom" type="Node2D" unique_id=2111387179]
 script = ExtResource("1_tke8u")
@@ -29,11 +29,11 @@ collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShowPaths" unique_id=719905812]
-position = Vector2(224, 400)
+position = Vector2(128, 400)
 shape = SubResource("RectangleShape2D_a6585")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="ShowPaths" unique_id=1663179878]
-position = Vector2(224, 208)
+position = Vector2(128, 208)
 shape = SubResource("RectangleShape2D_sf58l")
 
 [node name="PathHighlights" type="Node2D" parent="." unique_id=677550355]
@@ -50,22 +50,22 @@ polygon = PackedVector2Array(0, 160, 0, 16, 160, 16, 192, 16, 192, 56, 256, 56, 
 respawn_target = NodePath("../RespawnPos1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikePit" unique_id=2118158762]
-position = Vector2(-8, 304)
+position = Vector2(-12, 304)
 shape = SubResource("RectangleShape2D_8ahak")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="SpikePit" unique_id=998100250]
-position = Vector2(232, 304)
+position = Vector2(236, 304)
 shape = SubResource("RectangleShape2D_rnfdj")
 
 [node name="SpikePit2" parent="." unique_id=1458475916 node_paths=PackedStringArray("respawn_target") instance=ExtResource("3_sf58l")]
 respawn_target = NodePath("../RespawnPos2")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpikePit2" unique_id=351895937]
-polygon = PackedVector2Array(48, 96, 80, 96, 80, 128, 304, 128, 304, -16, 320, -16, 320, 144, 48, 144)
+polygon = PackedVector2Array(56, 104, 72, 104, 72, 136, 312, 136, 312, -16, 320, -16, 320, 144, 56, 144)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="SpikePit2" unique_id=1484863916]
 position = Vector2(32, -40)
-polygon = PackedVector2Array(-96, 24, 176, 24, 176, 80, 144, 80, 144, 40, -80, 40, -80, 184, -96, 184)
+polygon = PackedVector2Array(-96, 24, 168, 24, 168, 72, 152, 72, 152, 32, -88, 32, -88, 184, -96, 184)
 
 [node name="RespawnPos1" type="Marker2D" parent="." unique_id=1039762612]
 position = Vector2(224, 384)
