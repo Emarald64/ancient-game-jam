@@ -172,26 +172,17 @@ position = Vector2(605, 261)
 [node name="Coin" parent="Chest" unique_id=2122099455 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 50
 
 [node name="Coin2" parent="Chest" unique_id=769450594 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 50
 
 [node name="Coin3" parent="Chest" unique_id=2090786513 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
-
-[node name="Pickup" parent="Chest" unique_id=2121701322 instance=ExtResource("15_ly4gw")]
-visible = false
-
-[node name="Pickup2" parent="Chest" unique_id=1153190369 instance=ExtResource("15_ly4gw")]
-visible = false
-
-[node name="Pickup3" parent="Chest" unique_id=363543128 instance=ExtResource("15_ly4gw")]
-visible = false
+value = 50
 
 [node name="Chest2" parent="." unique_id=975861212 instance=ExtResource("14_r5lv5")]
 position = Vector2(-1340, -28)
@@ -199,17 +190,20 @@ position = Vector2(-1340, -28)
 [node name="Coin" parent="Chest2" unique_id=179350342 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 100
 
 [node name="Coin2" parent="Chest2" unique_id=970590253 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 100
 
 [node name="Coin3" parent="Chest2" unique_id=1180408064 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 100
+
+[node name="HealthPickup" parent="Chest2" unique_id=363543128 instance=ExtResource("15_ly4gw")]
+visible = false
 
 [node name="Chest10" parent="." unique_id=1224262665 instance=ExtResource("14_r5lv5")]
 position = Vector2(-1940, -304)
@@ -217,27 +211,27 @@ position = Vector2(-1940, -304)
 [node name="Coin" parent="Chest10" unique_id=2103635413 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 50
 
 [node name="Coin4" parent="Chest10" unique_id=1802670130 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 50
 
 [node name="Coin5" parent="Chest10" unique_id=1877442834 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 50
 
 [node name="Coin2" parent="Chest10" unique_id=513184738 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 50
 
 [node name="Coin3" parent="Chest10" unique_id=322370743 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 50
 
 [node name="Chest11" parent="." unique_id=1650360043 instance=ExtResource("14_r5lv5")]
 position = Vector2(-3191, -195)
@@ -245,27 +239,30 @@ position = Vector2(-3191, -195)
 [node name="Coin" parent="Chest11" unique_id=857021576 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 500
 
 [node name="Coin4" parent="Chest11" unique_id=1216485427 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 500
 
 [node name="Coin5" parent="Chest11" unique_id=871478461 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 500
 
 [node name="Coin2" parent="Chest11" unique_id=45575410 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 500
 
 [node name="Coin3" parent="Chest11" unique_id=1160826111 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 500
+
+[node name="HealthPickup" parent="Chest11" unique_id=2121701322 instance=ExtResource("15_ly4gw")]
+visible = false
 
 [node name="Chest14" parent="." unique_id=413076568 instance=ExtResource("14_r5lv5")]
 position = Vector2(-5322, -330)
@@ -275,57 +272,60 @@ drop_angle_maximum = 0.4363323129985824
 [node name="Coin" parent="Chest14" unique_id=1085518554 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 200
 
 [node name="Coin4" parent="Chest14" unique_id=1416865390 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 200
 
 [node name="Coin5" parent="Chest14" unique_id=1973630843 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 200
 
 [node name="Coin2" parent="Chest14" unique_id=2021762325 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 200
 
 [node name="Coin3" parent="Chest14" unique_id=1494021212 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 200
+
+[node name="HealthPickup" parent="Chest14" unique_id=447885250 instance=ExtResource("15_ly4gw")]
+visible = false
 
 [node name="Chest16" parent="." unique_id=1511252540 instance=ExtResource("14_r5lv5")]
 position = Vector2(-6179, -831)
 drop_angle_minimum = -0.4363323129985824
 drop_angle_maximum = 0.4363323129985824
 
-[node name="Coin" parent="Chest16" unique_id=447885250 instance=ExtResource("8_rewae")]
+[node name="Coin" parent="Chest16" unique_id=1069082226 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 100
 
 [node name="Coin4" parent="Chest16" unique_id=1675412445 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 100
 
 [node name="Coin5" parent="Chest16" unique_id=2063233570 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 100
 
 [node name="Coin2" parent="Chest16" unique_id=490442624 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 100
 
 [node name="Coin3" parent="Chest16" unique_id=1000814604 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 100
 
 [node name="Chest17" parent="." unique_id=135006226 instance=ExtResource("14_r5lv5")]
 position = Vector2(-6915, -838)
@@ -333,27 +333,33 @@ position = Vector2(-6915, -838)
 [node name="Coin" parent="Chest17" unique_id=266842631 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 3000
 
 [node name="Coin4" parent="Chest17" unique_id=531521664 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 3000
 
 [node name="Coin5" parent="Chest17" unique_id=925615331 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 3000
 
 [node name="Coin2" parent="Chest17" unique_id=1222028957 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 3000
 
 [node name="Coin3" parent="Chest17" unique_id=177695246 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+value = 3000
+
+[node name="HealthPickup" parent="Chest17" unique_id=1958566577 instance=ExtResource("15_ly4gw")]
+visible = false
+
+[node name="HealthPickup1" parent="Chest17" unique_id=950060609 instance=ExtResource("15_ly4gw")]
+visible = false
 
 [node name="Chest15" parent="." unique_id=743785212 instance=ExtResource("14_r5lv5")]
 position = Vector2(-4786, 55)
@@ -361,27 +367,25 @@ position = Vector2(-4786, 55)
 [node name="Coin" parent="Chest15" unique_id=414628609 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
 
 [node name="Coin4" parent="Chest15" unique_id=1941906011 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
 
 [node name="Coin5" parent="Chest15" unique_id=1998865682 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
 
 [node name="Coin2" parent="Chest15" unique_id=2036766877 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
 
 [node name="Coin3" parent="Chest15" unique_id=734384553 instance=ExtResource("8_rewae")]
 visible = false
 monitorable = false
-value = 10
+
+[node name="HealthPickup" parent="Chest15" unique_id=1623163365 instance=ExtResource("15_ly4gw")]
+visible = false
 
 [node name="Chest3" parent="." unique_id=435047912 instance=ExtResource("14_r5lv5")]
 position = Vector2(-1740, -224)
