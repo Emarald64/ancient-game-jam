@@ -4,8 +4,8 @@ extends Node2D
 var opened:=false
 @export var drop_radius_minimum:float=16
 @export var drop_radius_maximum:float=64
-@export_range(0,360,1,"radians_as_degrees") var drop_angle_minimum:float=0
-@export_range(0,360,1,"radians_as_degrees") var drop_angle_maximum:float=PI
+@export_range(-360,360,1,"radians_as_degrees") var drop_angle_minimum:float=0
+@export_range(-360,360,1,"radians_as_degrees") var drop_angle_maximum:float=PI
 
 func open():
 	if not opened:
