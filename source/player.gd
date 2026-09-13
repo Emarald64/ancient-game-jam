@@ -109,7 +109,7 @@ func hurt(amount:int,damage_type:=DAMAGE_TYPE.unknown):
 func die(display_death_screen:=true,damage_type:=DAMAGE_TYPE.unknown):
 	dying=true
 	health=0
-
+	main.game_timer.stop()
 	update_health()
 	if display_death_screen:
 		main.time_out_animation.play()
