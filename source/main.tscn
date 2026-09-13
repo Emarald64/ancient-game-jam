@@ -207,6 +207,7 @@ value = 100
 
 [node name="HealthPickup" parent="Chest2" unique_id=363543128 instance=ExtResource("15_ly4gw")]
 visible = false
+monitorable = false
 
 [node name="Chest10" parent="." unique_id=1224262665 instance=ExtResource("14_r5lv5")]
 position = Vector2(-1940, -304)
@@ -270,6 +271,7 @@ value = 500
 
 [node name="HealthPickup" parent="Chest11" unique_id=2121701322 instance=ExtResource("15_ly4gw")]
 visible = false
+monitorable = false
 
 [node name="Chest14" parent="." unique_id=413076568 instance=ExtResource("14_r5lv5")]
 position = Vector2(-5322, -330)
@@ -303,6 +305,7 @@ value = 200
 
 [node name="HealthPickup" parent="Chest14" unique_id=447885250 instance=ExtResource("15_ly4gw")]
 visible = false
+monitorable = false
 
 [node name="Chest16" parent="." unique_id=1511252540 instance=ExtResource("14_r5lv5")]
 position = Vector2(-6179, -831)
@@ -364,9 +367,11 @@ value = 3000
 
 [node name="HealthPickup" parent="Chest17" unique_id=1958566577 instance=ExtResource("15_ly4gw")]
 visible = false
+monitorable = false
 
 [node name="HealthPickup1" parent="Chest17" unique_id=950060609 instance=ExtResource("15_ly4gw")]
 visible = false
+monitorable = false
 
 [node name="Chest15" parent="." unique_id=743785212 instance=ExtResource("14_r5lv5")]
 position = Vector2(-4786, 55)
@@ -393,6 +398,7 @@ monitorable = false
 
 [node name="HealthPickup" parent="Chest15" unique_id=1623163365 instance=ExtResource("15_ly4gw")]
 visible = false
+monitorable = false
 
 [node name="Chest3" parent="." unique_id=435047912 instance=ExtResource("14_r5lv5")]
 position = Vector2(-1740, -224)

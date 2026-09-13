@@ -9,6 +9,7 @@ var running:=false
 signal time_up
 
 func start():
+	$AnimationPlayer.play("start")
 	running=true
 	show()
 

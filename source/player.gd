@@ -17,6 +17,8 @@ var animating:=false
 signal collected_money(amount:int)
 
 func _physics_process(_delta: float) -> void:
+	if not dying and Input.is_action_just_pressed("meow"):
+		$"Meow =3".play(.15)
 	if not dying and not animating && canMove:
 		var movement=Input.get_vector("move_left","move_right","move_up","move_down")
 		SpriteDirectionDecider(movement)
@@ -97,15 +99,20 @@ func _on_pickup(pickup: Area2D) -> void:
 		pickup.queue_free()
 
 func heal(amount:int):
+	$"Heal Sound".play()
 	health=mini(health+amount,max_health)
 	update_health()
 
 func hurt(amount:int,damage_type:=DAMAGE_TYPE.unknown):
-	health-=amount
-	$GPUParticles2D.emitting = true
-	if health<=0:
-		die(true,damage_type)
-	update_health()
+	if $IFrames.is_stopped():
+		health-=amount
+		$"Hurt Sound".play()
+		$GPUParticles2D.emitting = true
+		$IFrames.start()
+		$CatSprite.modulate=Color(.75,.75,.75)
+		if health<=0:
+			die(true,damage_type)
+		update_health()
 
 func die(display_death_screen:=true,damage_type:=DAMAGE_TYPE.unknown):
 	dying=true
@@ -161,3 +168,7 @@ func hit(area:Area2D):
 			hurt(damage,damage_type)
 			if area.get_meta("remove_on_hit",false):
 				area.queue_free()
+
+
+func end_iframes() -> void:
+	$CatSprite.modulate=Color.WHITE
