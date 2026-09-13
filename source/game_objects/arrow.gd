@@ -6,7 +6,7 @@ var velocity_dir : Vector2
 var age:=0.0
 
 func _ready() -> void:
-	velocity_dir = Vector2(1, 0 + randf_range(-0.075, 0.075))
+	velocity_dir = Vector2(1, 0 + randf_range(-0.015, 0.015))
 	velocity_dir = velocity_dir.normalized()
 	
 	look_at(to_global(velocity_dir))
