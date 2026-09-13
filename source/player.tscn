@@ -810,6 +810,33 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_t71p0"]
+colors = PackedColorArray(0.2686335, 1.8049032e-07, 7.219613e-08, 1, 0.7624717, 3.352307e-05, 1.6460717e-05, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ri2ci"]
+gradient = SubResource("Gradient_t71p0")
+
+[sub_resource type="Curve" id="Curve_gqehw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5870307, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_48c3i"]
+curve = SubResource("Curve_gqehw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6j2d2"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(9.8, 32.755, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+spread = 180.0
+initial_velocity_min = 55.94
+initial_velocity_max = 93.09
+gravity = Vector3(0, 98, 0)
+scale_min = 4.0
+scale_max = 6.0
+scale_curve = SubResource("CurveTexture_48c3i")
+color_initial_ramp = SubResource("GradientTexture1D_ri2ci")
+
 [node name="Player" type="CharacterBody2D" unique_id=610998424 node_paths=PackedStringArray("playerSprite")]
 collision_layer = 9
 motion_mode = 1
@@ -863,6 +890,16 @@ shape = SubResource("RectangleShape2D_a6585")
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_48c3i")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1082643280]
+z_index = 2
+position = Vector2(0, -1)
+emitting = false
+amount = 24
+one_shot = true
+speed_scale = 2.66
+explosiveness = 0.84
+process_material = SubResource("ParticleProcessMaterial_6j2d2")
 
 [connection signal="area_entered" from="Pickup" to="." method="_on_pickup"]
 [connection signal="area_entered" from="HurtBox" to="." method="hit"]

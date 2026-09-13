@@ -82,6 +82,9 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6j2d2"]
+size = Vector2(20, 30.666668)
+
 [node name="ArrowSpawner" type="Node2D" unique_id=758422277]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_g84ck")
@@ -105,5 +108,10 @@ rotation = -1.5707964
 scale = Vector2(1.11, 1.11)
 sprite_frames = SubResource("SpriteFrames_6j2d2")
 animation = &"shoot"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=594942529]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=257018110]
+shape = SubResource("RectangleShape2D_6j2d2")
 
 [connection signal="timeout" from="Timer" to="." method="shoot_arrow"]

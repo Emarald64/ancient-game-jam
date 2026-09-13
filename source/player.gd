@@ -86,7 +86,7 @@ func heal(amount:int):
 
 func hurt(amount:int,damage_type:=DAMAGE_TYPE.unknown):
 	health-=amount
-	
+	$GPUParticles2D.emitting = true
 	if health<=0:
 		die(true,damage_type)
 	update_health()
