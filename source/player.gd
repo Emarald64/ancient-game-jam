@@ -122,6 +122,18 @@ func update_health():
 func play_win_animation():
 	animating=true
 	# play reverse start animation here
+	var rope_tween=create_tween()
+	var rope:Node2D=Globals.main.get_node("rope")
+	rope.reparent($CatSprite)
+	rope.position=Vector2(0,-700)
+	rope_tween.tween_property(rope,"position:y",-407.93,.5).set_trans(Tween.TRANS_BACK)
+	rope_tween.tween_interval(.5)
+	await rope_tween.finished
+	var cat_tween=create_tween()
+	cat_tween.set_parallel()
+	cat_tween.tween_method($CatSprite.set_idle_sprite,2,20,3)
+	cat_tween.tween_property($CatSprite,"position:y",-350,3)
+	await cat_tween.finished
 	main.win_screen.appear()
 
 func hit(area:Area2D):
