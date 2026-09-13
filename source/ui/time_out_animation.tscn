@@ -14,7 +14,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(540, 613)]
+"values": [Vector2(540, 800)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -74,7 +74,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(540, 613)]
+"values": [Vector2(540, 800)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -87,6 +87,18 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0.07, 0.06430667, 0.027299998, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Rock5:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1055, -85.99999)]
 }
 
 [sub_resource type="Animation" id="Animation_lsecl"]
@@ -103,7 +115,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 1, 2),
 "transitions": PackedFloat32Array(1, 2, 1, 0.210225),
 "update": 0,
-"values": [Vector2(540, 613), Vector2(540, 613), Vector2(540, 319), Vector2(540, 331)]
+"values": [Vector2(540, 1000), Vector2(540, 613), Vector2(540, 319), Vector2(540, 331)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -160,10 +172,10 @@ tracks/5/path = NodePath("SandFar:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0.5, 1.25, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 1.25, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(540, 613), Vector2(540, 229), Vector2(540, 254)]
+"values": [Vector2(540, 1000), Vector2(540, 613), Vector2(540, 229), Vector2(540, 254)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -176,6 +188,18 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0.07, 0.06430667, 0.027299998, 0), Color(0.07, 0.06430667, 0.027299998, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Rock5:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.79076356, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1055, -85.99999), Vector2(1055, -85.99999), Vector2(1131.515, 408.709)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ufgwo"]
@@ -203,9 +227,9 @@ grow_vertical = 2
 color = Color(0.07, 0.06430667, 0.027299998, 0)
 
 [node name="SandFar" type="Polygon2D" parent="." unique_id=838776775]
-position = Vector2(540, 613)
+position = Vector2(540, 800)
 color = Color(0.18, 0.16848001, 0.0936, 1)
-polygon = PackedVector2Array(-540, 55, -464, 79, -407, 76, -350, 64, -305, 51, -248, 53, -204, 63, -150, 40, -107, 36, -52, 47, 57, 54, 135, 57, 225, 39, 271, 51, 343, 64, 414, 49, 483, 38, 572, 50, 616, 82, 616, 330, -542, 330)
+polygon = PackedVector2Array(-540, 55, -464, 79, -407, 76, -350, 64, -305, 51, -248, 53, -204, 63, -150, 40, -107, 36, -52, 47, 57, 54, 135, 57, 225, 39, 271, 51, 343, 64, 414, 49, 483, 38, 661, 50, 815, 82, 892, 330, -542, 330)
 
 [node name="Rock2" type="Polygon2D" parent="." unique_id=1081163202]
 position = Vector2(389, -136)
@@ -227,10 +251,16 @@ position = Vector2(122, -76)
 color = Color(0.16, 0.123333335, 0.072, 1)
 polygon = PackedVector2Array(-165, -68, -71, 63, 151, -51, 210, -284, -108, -294)
 
+[node name="Rock5" type="Polygon2D" parent="." unique_id=1315919347]
+position = Vector2(1055, -85.99999)
+rotation = -0.17834029
+color = Color(0.16, 0.123333335, 0.072, 1)
+polygon = PackedVector2Array(-165, -68, -71, 63, 151, -51, 210, -284, -108, -294)
+
 [node name="Sand" type="Polygon2D" parent="." unique_id=1773368448]
-position = Vector2(540, 613)
+position = Vector2(540, 800)
 color = Color(0.3, 0.2808, 0.156, 1)
-polygon = PackedVector2Array(-540, 55, -464, 79, -407, 76, -350, 64, -305, 51, -248, 53, -204, 63, -150, 40, -107, 36, -52, 47, 57, 54, 135, 57, 225, 39, 271, 51, 343, 64, 414, 49, 483, 38, 572, 50, 616, 82, 616, 330, -540, 330)
+polygon = PackedVector2Array(-540, 55, -464, 79, -407, 76, -350, 64, -305, 51, -248, 53, -204, 63, -150, 40, -107, 36, -52, 47, 57, 54, 135, 57, 225, 39, 271, 51, 343, 64, 414, 49, 483, 38, 648, 37, 780, 82, 809, 496.48587, -540, 483.48587)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1557496649]
 libraries/ = SubResource("AnimationLibrary_ufgwo")

@@ -100,6 +100,8 @@ unique_name_in_owner = true
 
 [node name="ScreenWipe" parent="UILayer" unique_id=1574779303 instance=ExtResource("7_d5d55")]
 unique_name_in_owner = true
+offset_left = -66.0
+offset_right = -46.0
 
 [node name="blehhh" type="ColorRect" parent="UILayer" unique_id=2136158774]
 visible = false

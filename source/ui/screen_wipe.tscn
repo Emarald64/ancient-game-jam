@@ -43,7 +43,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
-"values": [Vector2(20, 324), Vector2(605.5, 324)]
+"values": [Vector2(20, 398.375), Vector2(688.725, 395.415)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -70,7 +70,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
-"values": [Vector2(605.5, 324), Vector2(20, 324)]
+"values": [Vector2(698.34, 406.565), Vector2(20, 395.43)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -82,7 +82,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
-"values": [Vector2(-40, 0), Vector2(1152, 0)]
+"values": [Vector2(-40, 0), Vector2(1335.43, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ngkqo"]
