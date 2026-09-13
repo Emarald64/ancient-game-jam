@@ -27,6 +27,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_key_pressed(KEY_Y):
 		start_escape()
+	if Input.is_action_just_pressed("debug_hurt"):
+		player.hurt(1)
+	if Input.is_action_just_pressed("debug_heal"):
+		player.heal(1)
 	if camera_shake_intencity>0:
 		camera.offset=50*Vector2(randf(),randf())*camera_shake_intencity
 		camera_shake_intencity-=delta
