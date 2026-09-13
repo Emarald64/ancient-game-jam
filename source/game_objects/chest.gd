@@ -16,7 +16,7 @@ func open():
 				var drop_target=randf_range(drop_radius_minimum,drop_radius_maximum)*Vector2.from_angle(randf_range(drop_angle_minimum,drop_angle_maximum))
 				var tween=create_tween()
 				var tween2 = create_tween()
-				var tween3 = create_tween()
+				
 				tween.set_ease(Tween.EASE_OUT)
 				tween.tween_property(drop,"position",drop_target,.5)
 			
@@ -27,6 +27,7 @@ func open():
 					tween.tween_property(drop, "monitorable", true, 0)
 					if drop is MoneyPickup:
 						print("doing this!")
+						var tween3 = create_tween()
 						tween3.tween_callback(drop.onAnimFinish).set_delay(0.5)
 				drop.show()
 				if drop.has_method("_on_found_in_chest"):
