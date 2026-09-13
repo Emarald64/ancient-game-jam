@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://b5p73l77k2nvm"]
+
+[ext_resource type="PackedScene" uid="uid://b01h4mwxfmumd" path="res://source/pickups/base_pickup.tscn" id="1_t5sdi"]
+[ext_resource type="Script" uid="uid://c0qi47d6a7h8f" path="res://idol_pickup.gd" id="2_3ihih"]
+[ext_resource type="Texture2D" uid="uid://b8gva773wyjno" path="res://arte/idolAnim.png" id="3_2qa7n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5qhiy"]
+radius = 46.010868
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ij6o1"]
+atlas = ExtResource("3_2qa7n")
+region = Rect2(0, 0, 167, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ypcg"]
+atlas = ExtResource("3_2qa7n")
+region = Rect2(167, 0, 167, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgvnb"]
+atlas = ExtResource("3_2qa7n")
+region = Rect2(334, 0, 167, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pk6d4"]
+atlas = ExtResource("3_2qa7n")
+region = Rect2(501, 0, 167, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyhq6"]
+atlas = ExtResource("3_2qa7n")
+region = Rect2(668, 0, 167, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2i10l"]
+atlas = ExtResource("3_2qa7n")
+region = Rect2(835, 0, 167, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7r4ea"]
+atlas = ExtResource("3_2qa7n")
+region = Rect2(1002, 0, 167, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2v5rf"]
+atlas = ExtResource("3_2qa7n")
+region = Rect2(1169, 0, 167, 118)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6j2d2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ij6o1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ypcg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgvnb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pk6d4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyhq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2i10l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7r4ea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2v5rf")
+}],
+"loop": 1,
+"name": &"spin",
+"speed": 12.0
+}]
+
+[node name="Pickup" unique_id=447885250 instance=ExtResource("1_t5sdi")]
+script = ExtResource("2_3ihih")
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1050010827]
+shape = SubResource("CircleShape2D_5qhiy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=1656511749]
+z_index = 8
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_6j2d2")
+animation = &"spin"
+autoplay = "spin"
+frame_progress = 0.63883406
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -90,6 +90,8 @@ func _on_pickup(pickup: Area2D) -> void:
 		if health>=max_health:
 			return
 		heal(pickup.heals_for)
+	if pickup is IdolPickup:
+		Globals.main.start_escape()
 	if pickup is Pickup:
 		pickup.queue_free()
 

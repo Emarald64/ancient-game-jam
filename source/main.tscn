@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://du3t3pukavbvk" path="res://source/game_objects/arrow_spawner.tscn" id="19_sm8so"]
 [ext_resource type="PackedScene" uid="uid://c37w6aw1kfkda" path="res://source/extra_rooms/path_highlight_room.tscn" id="19_vjn7t"]
 [ext_resource type="PackedScene" uid="uid://bnpanluy72urm" path="res://source/escape_area.tscn" id="25_cv3e8"]
+[ext_resource type="PackedScene" uid="uid://b5p73l77k2nvm" path="res://source/idol_pickup.tscn" id="26_nmlcr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6j2d2"]
 size = Vector2(64.68817, 56.4301)
@@ -72,7 +73,7 @@ shape = SubResource("RectangleShape2D_6j2d2")
 
 [node name="Player" parent="." unique_id=610998424 node_paths=PackedStringArray("main", "health_counter") instance=ExtResource("1_kaxhg")]
 unique_name_in_owner = true
-position = Vector2(600, 366)
+position = Vector2(-8334, -686)
 scale = Vector2(0.7, 0.7)
 main = NodePath("..")
 health_counter = NodePath("../UILayer/HealthCounter")
@@ -936,6 +937,9 @@ position = Vector2(352, 375)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EscapeArea" unique_id=791817208]
 position = Vector2(259, 21.5)
 shape = SubResource("RectangleShape2D_a6585")
+
+[node name="Pickup" parent="." unique_id=980425500 instance=ExtResource("26_nmlcr")]
+position = Vector2(-8326, -870)
 
 [connection signal="body_entered" from="Sign/signarea" to="Sign/signarea" method="_on_body_entered"]
 [connection signal="body_exited" from="Sign/signarea" to="Sign/signarea" method="_on_body_exited"]
