@@ -10,11 +10,11 @@ config_version=5
 
 [application]
 
-config/name="Ancient Game Jam"
+config/name="Klepto Cat Mania"
 run/main_scene="uid://dut4kwctm6nl"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 run/max_fps=60
-config/icon="res://icon.svg"
+config/icon="uid://bl8mg4y5yi3au"
 
 [autoload]
 
@@ -101,3 +101,4 @@ sprint={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
