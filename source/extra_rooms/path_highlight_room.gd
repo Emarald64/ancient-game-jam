@@ -22,7 +22,7 @@ func unhighlight_path():
 
 func on_escape_start():
 	camera_offset=Vector2(0,128)
-	$ShowPaths/CollisionShape2D_escape.disabled=false
-	$ShowPaths/CollisionShape2D.disabled=true
+	$ShowPaths/CollisionShape2D_escape.set_deferred("disabled",false)
+	$ShowPaths/CollisionShape2D.set_deferred("disabled",true)
 	$SpikePit.respawn_target=$RespawnPos2
 	$SpikePit2.respawn_target=$RespawnPos3
