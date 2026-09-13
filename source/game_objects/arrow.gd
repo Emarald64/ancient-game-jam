@@ -21,4 +21,6 @@ func _on_body_entered(_body : Node2D) -> void:
 		velocity_magnitude = 0.0
 		var tween = create_tween()
 		tween.tween_property(self, "scale", Vector2(0.01, 0.01), 0.25)
+		set_deferred("monitoring", false)
+		set_deferred("monitorable", false)
 	pass # Replace with function body.

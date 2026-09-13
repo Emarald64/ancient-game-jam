@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bwsu8vrbuh0yn"]
+
+[ext_resource type="PackedScene" uid="uid://b01h4mwxfmumd" path="res://source/pickups/base_pickup.tscn" id="1_7yat3"]
+[ext_resource type="Script" uid="uid://bibeg5lpejq5n" path="res://source/pickups/health_pickup.gd" id="2_o4t0v"]
+[ext_resource type="Texture2D" uid="uid://d335x3roe72l" path="res://arte/nip.png" id="3_42xwn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8fhm"]
+atlas = ExtResource("3_42xwn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmimh"]
+atlas = ExtResource("3_42xwn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80e11"]
+atlas = ExtResource("3_42xwn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6j2d2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8fhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmimh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80e11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmimh")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Pickup" unique_id=447885250 instance=ExtResource("1_7yat3")]
+script = ExtResource("2_o4t0v")
+heals_for = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=1869426560]
+texture_filter = 1
+scale = Vector2(1.75, 1.75)
+sprite_frames = SubResource("SpriteFrames_6j2d2")
+autoplay = "default"
+frame_progress = 0.4466067

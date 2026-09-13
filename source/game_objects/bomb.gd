@@ -16,6 +16,9 @@ func explode():
 	tween.tween_interval(.65)
 	tween.tween_callback(queue_free)
 	
+	await get_tree().create_timer(0.25).timeout
+	$Explosion.monitorable=false
+	
 
 func _process(_delta: float) -> void:
 	$BombFlash.color.a=(sin(((fuse_time-$Timer.time_left)**2)*10)+1)/10

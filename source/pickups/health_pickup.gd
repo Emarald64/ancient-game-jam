@@ -1,4 +1,4 @@
 class_name HealthPickup
 extends Pickup
 
-var heals_for:int
+@export var heals_for:int
