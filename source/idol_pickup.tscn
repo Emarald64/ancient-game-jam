@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b8gva773wyjno" path="res://arte/idolAnim.png" id="3_2qa7n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5qhiy"]
-radius = 46.010868
+radius = 15.033297
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ij6o1"]
 atlas = ExtResource("3_2qa7n")
@@ -83,6 +83,6 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_6j2d2")
 animation = &"spin"
 autoplay = "spin"
-frame_progress = 0.63883406
+frame_progress = 0.035014015
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

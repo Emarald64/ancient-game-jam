@@ -92,6 +92,7 @@ func _on_pickup(pickup: Area2D) -> void:
 		heal(pickup.heals_for)
 	if pickup is IdolPickup:
 		Globals.main.start_escape()
+		collected_money.emit(12500)
 	if pickup is Pickup:
 		pickup.queue_free()
 
