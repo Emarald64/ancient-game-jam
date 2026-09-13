@@ -56,7 +56,7 @@ offset_bottom = 578.0
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 24
 text = "Controls:
-WASD / 🡐 🡒 🡑 🡓 to move
+WASD / arrow keys to move
 Shift to sprint"
 
 [node name="Sign" type="Sprite2D" parent="." unique_id=78767921]
@@ -1170,13 +1170,13 @@ shape = SubResource("RectangleShape2D_a6585")
 position = Vector2(-8326, -870)
 
 [node name="Pickup2" parent="." unique_id=892343668 instance=ExtResource("15_ly4gw")]
-position = Vector2(-7977, -623)
+position = Vector2(-7975, -633)
 
 [node name="Pickup3" parent="." unique_id=1743005035 instance=ExtResource("15_ly4gw")]
-position = Vector2(-7876, -624)
+position = Vector2(-7878, -633)
 
 [node name="Pickup4" parent="." unique_id=1556899620 instance=ExtResource("15_ly4gw")]
-position = Vector2(-7774, -622)
+position = Vector2(-7778, -635)
 
 [connection signal="body_entered" from="Sign/signarea" to="Sign/signarea" method="_on_body_entered"]
 [connection signal="body_exited" from="Sign/signarea" to="Sign/signarea" method="_on_body_exited"]
