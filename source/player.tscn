@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://5imd3s4duyyn" path="res://source/player.gd" id="1_l788v"]
 [ext_resource type="Texture2D" uid="uid://cmuynv83y3dyo" path="res://arte/catStuff/catCanvasTextiure.tres" id="2_l788v"]
+[ext_resource type="Script" uid="uid://dwkk53c72ia1q" path="res://source/cat_sprite.gd" id="3_mwjqb"]
 [ext_resource type="Texture2D" uid="uid://ufsc3xldc006" path="res://arte/dollar_sign.png" id="4_8gf3v"]
 [ext_resource type="Texture2D" uid="uid://cutuvg0s8xmg7" path="res://arte/hole.webp" id="4_mwjqb"]
+[ext_resource type="Texture2D" uid="uid://bea0dciou80at" path="res://arte/rope.png" id="4_t71p0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hd2yd"]
 atlas = ExtResource("2_l788v")
@@ -422,6 +424,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_hd2yd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfwdo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwi3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whqx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bgc4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wieqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3eywc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cloo8")
+}],
+"loop": 0,
+"name": &"idle_sprites_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_7dinq")
 }, {
 "duration": 1.0,
@@ -789,9 +820,9 @@ playerSprite = NodePath("CatSprite")
 z_index = 1
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_6j2d2")
-animation = &"idle_sprites"
-frame_progress = 0.7605645
-speed_scale = 10.0
+animation = &"idle_sprites_2"
+speed_scale = 14.0
+script = ExtResource("3_mwjqb")
 
 [node name="CatSprite2" type="AnimatedSprite2D" parent="CatSprite" unique_id=192624384]
 modulate = Color(0, 0, 0, 0.48235294)
@@ -801,7 +832,13 @@ position = Vector2(0, 7)
 sprite_frames = SubResource("SpriteFrames_6j2d2")
 animation = &"idle_sprites"
 frame_progress = 0.7605645
-speed_scale = 10.0
+speed_scale = 14.0
+
+[node name="rope" type="Sprite2D" parent="CatSprite" unique_id=1805221148]
+z_index = 20
+texture_filter = 1
+position = Vector2(0, -407.93)
+texture = ExtResource("4_t71p0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=135320124]
 shape = SubResource("RectangleShape2D_a6585")

@@ -44,7 +44,7 @@ value = 1000000
 
 [node name="Player" parent="." unique_id=610998424 node_paths=PackedStringArray("main", "health_counter") instance=ExtResource("1_kaxhg")]
 unique_name_in_owner = true
-position = Vector2(468, 306)
+position = Vector2(600, 366)
 scale = Vector2(0.7, 0.7)
 main = NodePath("..")
 health_counter = NodePath("../UILayer/HealthCounter")
